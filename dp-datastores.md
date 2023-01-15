@@ -33,6 +33,11 @@ In order to facilitate the buildout of the data product, I've found the followin
    * ## Data data store
    This should be where the datasets that are stored at the input data port, abstraction layer and target data port are stored.
 
+   * ## Metrics data store
+   The data product should be able to capture information about how the data product has been used 
+   e.g. * metrics on number of calls to specific endpoints
+        * audit logs which capture what messages were posted to endpoints
+
    There is no specific technology that needs to be used for a data store but my recommendation would be that:-
    1. It is a cloud-based data store - so that the data product can easily use it.
    2. It is capable of storing data in a variety of formats, not just relational - this is important as web development doesn't always rely on relational databases.

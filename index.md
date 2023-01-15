@@ -32,5 +32,6 @@ It will cover the following topics:-
 10. Performance
 11. Creation of data models in a data modelling tool
 12. Storage of metadata in a data governance tool
+13. Creation of a data marketplace
 
 [james.m.dey](mailto://james.dey@hotmail.com) January 2023

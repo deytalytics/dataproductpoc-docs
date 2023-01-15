@@ -33,6 +33,10 @@ In order to facilitate the buildout of the data product, I've found the followin
    * ## Data data store
    This should be where the datasets that are stored at the input data port, abstraction layer and target data port are stored.
 
-There is no specific technology that needs to be used for a data store but my recommendation would be that:-
-1. It is a cloud-based data store - so that the data product can easily use it.
-2. It is capable of storing data in a variety of formats, not just relational - this is important as web development doesn't always rely on relational databases.
+   There is no specific technology that needs to be used for a data store but my recommendation would be that:-
+   1. It is a cloud-based data store - so that the data product can easily use it.
+   2. It is capable of storing data in a variety of formats, not just relational - this is important as web development doesn't always rely on relational databases.
+
+   Examples include:-
+   1. Data Lakes (e.g. [Azure Data Lake](https://azure.microsoft.com/en-gb/solutions/data-lake/))
+   2. Cloud-based polyglot databases (e.g. [Snowflake](https://www.snowflake.com/en/), [BigQuery](https://cloud.google.com/bigquery), [PostgreSQL](https://www.postgresql.org/))

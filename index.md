@@ -15,19 +15,22 @@ It will cover the following topics:-
    * Source to an Input Data Port/endpoint
    * Transformed into an abstraction layer
    * Formatted and sent via an Output Data Port/endpoint
-3. The creation of the [discovery endpoint](dp-discovery-endpoint.md) which will allow information about the REST API to be discovered 
+4. The creation of the [discovery endpoint](dp-discovery-endpoint.md) which will allow information about the REST API to be discovered 
    i.e. human & machine readable documentation & data dictionary
-4. The creation of [control endpoints](dp-control-endpoint.md) which will allow:-
+5. The creation of [control endpoints](dp-control-endpoint.md) which will allow:-
    * Metadata and controls to be posted to a controls input port
    * Audit logs to be pulled from a controls output port
-5. The documentation required:-
+6. The documentation required:-
    * Standard REST API docs
    * A link to a data sharing agreement
    * A link to a data lineage diagram which describes the flow of data from the input data port to the output data port
    * A link to a data model of the dataset as seen at the output data port
    * A link to a data dictionary describing the fields in the dataset
-6. [Authentication & Authorisation](dp-authentication.md)
-7. How to deploy to a cloud platform
-8. API naming and versioning
+7. [Authentication & Authorisation](dp-authentication.md)
+8. How to deploy to a cloud platform
+9. API naming and versioning
+10. Performance
+11. Creation of data models in a data modelling tool
+12. Storage of metadata in a data governance tool
 
 [james.m.dey](mailto://james.dey@hotmail.com) January 2023

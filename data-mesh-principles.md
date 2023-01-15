@@ -13,7 +13,7 @@ Documentation should include:-
    * Data product Name (should follow a naming standard)
    * Version (should follow versioning standards)
    * A link to a data lineage diagram showing how data has flowed from source
-   * A link to a target data model showing how datasets are stored in the data product
+   * A link to a target data model (diagram and data dictionary) showing how datasets are stored in the data product
    * A link to data sharing agreements which explains the terms & conditions that are in place between:-
      * The data product owner and data source owners 
      * The data product owner and data consumers

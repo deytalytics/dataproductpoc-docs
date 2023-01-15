@@ -2,6 +2,8 @@
 This website documents how to practically create data products within a data mesh.
 It is the instantiation of the architectural theory provided by Zhamak Dehgani in her [Data Mesh book](https://www.oreilly.com/library/view/data-mesh/9781492092384)
 
+The purpose of the proof of concept is to assist organisations who are struggling to build a data mesh and data products.
+
 This documentation will be based on a data product with REST API at it's core. The reasoning for this is that Zhamak's background is in API architecture and its the easiest data product type to create 
 
 It will cover the following topics:- 
@@ -23,3 +25,5 @@ It will cover the following topics:-
 6. Basic Authentication & Authorisation
 7. How to deploy to a cloud platform
 8. API naming and versioning
+
+[james.m.dey](mailto://james.dey@hotmail.com) January 2023

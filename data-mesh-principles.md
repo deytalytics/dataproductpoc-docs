@@ -24,19 +24,20 @@ e.g. data product owner, data product developer etc
 
 3. Self-serve platform
 
-The data product should provide sufficient metadata and controls to allow it to be self-served. The capabilities include:-
-    * Scalable polyglot big data storage
-    * Encryption for data at rest and in motion
-    * Data product versioning
-    * Data product schema
-    * Data product de-identification
-    * Unified data access control and logging
-    * Data pipeline implementation and orchestration
-    * Data product discovery, catalog registration and publishing
-    * Data governance and standardization
-    * Data product lineage
-    * Data product monitoring/alerting/log
-    * Data product quality metrics (collection and sharing)
-    * In memory data caching
-    * Federated identity management
-    * Compute and data locality
+The data product should provide sufficient metadata and controls to allow it to be self-served. 
+The capabilities include:-
+   * Scalable polyglot big data storage
+   * Encryption for data at rest and in motion
+   * Data product versioning
+   * Data product schema
+   * Data product de-identification
+   * Unified data access control and logging
+   * Data pipeline implementation and orchestration
+   * Data product discovery, catalog registration and publishing
+   * Data governance and standardization
+   * Data product lineage
+   * Data product monitoring/alerting/log
+   * Data product quality metrics (collection and sharing)
+   * In memory data caching
+   * Federated identity management
+   * Compute and data locality

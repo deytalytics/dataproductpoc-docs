@@ -9,7 +9,7 @@ This documentation will be based on a data product with REST API at it's core. T
 It will cover the following topics:- 
 1. The [data mesh principles](data-mesh-principles.md) and what is a data product
 2. The creation of the REST API
-3. The creation of relational databases to store data captured from:-
+3. The creation of [data stores](dp-datastores.md) to store data captured from:-
    * Source to an Input Data Port/endpoint
    * Transformed into an abstraction layer
    * Formatted and sent via an Output Data Port/endpoint

@@ -2,7 +2,7 @@
 This website documents how to practically create data products within a data mesh.
 It is the instantiation of the architectural theory provided by Zhamak Dehgani in her [Data Mesh book](https://www.oreilly.com/library/view/data-mesh/9781492092384)
 
-This documentation will be based on a data product with REST API at it's core.
+This documentation will be based on a data product with REST API at it's core. The reasoning for this is that Zhamak's background is in API architecture and its the easiest data product type to create 
 
 It will cover the following topics:- 
 1. The [data mesh principles](data-mesh-principles.md) and what is a data product

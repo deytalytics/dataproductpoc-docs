@@ -1,4 +1,6 @@
 # Authentication & Authorisation
+
+![Authentication vs Authorisation](https://miro.medium.com/max/413/0*nrG185aDIksAga3W.jpg)
 Apart from public data, most organisation's data needs to be secured. 
 
 In terms of a data product, security will need to cover authentication and authorisation of a user.

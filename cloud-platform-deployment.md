@@ -1,6 +1,6 @@
 # Cloud Platform Deployment
 
-[Cloud deployment models](https://k21academy.com/wp-content/uploads/2020/04/Cloud-CDeployment-Model-1-e1627451820602.png)
+![Cloud deployment models](https://k21academy.com/wp-content/uploads/2020/04/Cloud-CDeployment-Model-1-e1627451820602.png)
 
 Although legacy database systems still exist on on-premise and, perhaps, there will be a return to organisation-maintained servers in the future
 most modern applications need to be deployed to the cloud. 

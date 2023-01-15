@@ -1,4 +1,4 @@
-#Data Mesh Principles
+# Data Mesh Principles
 
 1. Federated data governance 
 i.e. rather than having a central data governance team providing definitions and data quality rules for data that they have little experience with. 

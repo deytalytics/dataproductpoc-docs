@@ -14,8 +14,9 @@ Documentation should include:-
    * Version (should follow versioning standards)
    * A link to a data lineage diagram showing how data has flowed from source
    * A link to a target data model showing how datasets are stored in the data product
-   * A link to a data sharing agreement which explains the terms & conditions that are in place between the data product owner and data source owners
-   * A link to a data consumer agreement which explains the terms & conditions that are in place in terms of change control and notification to data consumers
+   * A link to data sharing agreements which explains the terms & conditions that are in place between:-
+     * The data product owner and data source owners 
+     * The data product owner and data consumers
    * Information on how the data product can be accessed
 
 The data product can be broken down into 3 main architectural components:-

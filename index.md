@@ -26,7 +26,7 @@ It will cover the following topics:-
    * A link to a data lineage diagram which describes the flow of data from the input data port to the output data port
    * A link to a data model of the dataset as seen at the output data port
    * A link to a data dictionary describing the fields in the dataset
-6. Basic Authentication & Authorisation
+6. [Basic Authentication & Authorisation](dp-authentication.md)
 7. How to deploy to a cloud platform
 8. API naming and versioning
 

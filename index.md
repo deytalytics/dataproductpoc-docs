@@ -5,7 +5,7 @@ It is the instantiation of the architectural theory provided by Zhamak Dehgani i
 This documentation will be based on a data product with REST API at it's core.
 
 It will cover the following topics:- 
-1. The basic principles of data mesh and what is a data product
+1. The data mesh principles and what is a data product
 2. The creation of the REST API
 3. The creation of relational databases to store data captured from:-
    * Source to an Input Data Port/endpoint

@@ -11,3 +11,5 @@ The data marketplace should be:-
 5. Return a list of data products with links through to the documentation
 6. The information supporting the data marketplace should be held in an online data store and be easily maintainable
 
+A data marketplace could be created by a web application developer fairly easily 
+but, if you're using Collibra as your data governance tool, it provides a [data marketplace](https://productresources.collibra.com/docs/collibra/latest/Content/DataMarketplace/to_dm.htm) which can utilise the data product metadata that has been provided to it. 

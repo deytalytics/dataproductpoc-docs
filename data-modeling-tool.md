@@ -1,6 +1,7 @@
 # Data Modeling Tool
 
 ![data dictionary example](https://dataedo.com/asset/img/kb/glossary/sample_data_dictionary_extended.png)
+
 As part of the documentation, it is desirable to link to data models including a data dictionary so that an 
 application developer or business user is able to understand what data is stored in the data product.
 The data modeling tool needs to be able to provide online accessible documentation to achieve this. 

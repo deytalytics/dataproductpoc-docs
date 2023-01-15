@@ -13,9 +13,9 @@ It will cover the following topics:-
    * Source to an Input Data Port/endpoint
    * Transformed into an abstraction layer
    * Formatted and sent via an Output Data Port/endpoint
-3. The creation of the discovery endpoint which will allow information about the REST API to be discovered 
+3. The creation of the [discovery endpoint](dp-discovery-endpoint.md) which will allow information about the REST API to be discovered 
    i.e. human & machine readable documentation & data dictionary
-4. The creation of a control endpoint which will allow metadata and data to be posted to the REST API
+4. The creation of a [control endpoint](dp-control-endpoint.md) which will allow metadata and data to be posted to the REST API
 5. The documentation required:-
    * Standard REST API docs
    * A link to a data sharing agreement

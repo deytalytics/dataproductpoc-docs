@@ -6,7 +6,7 @@ The purpose of the proof of concept is to assist organisations who are strugglin
 
 This documentation will be based on a data product with REST API at it's core. The reasoning for this is that Zhamak's background is in API architecture and its the easiest data product type to create 
 
-![Data Product architecture](dp-anatomy-diagram.jpg)
+![Data Product Anatomy Diagram](files://dp-anatomy-diagram.jpg)
 
 It will cover the following topics:- 
 1. The [data mesh principles](data-mesh-principles.md) and what is a data product

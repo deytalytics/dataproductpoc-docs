@@ -39,8 +39,9 @@ It will cover the following topics:-
 8. How to [deploy to a cloud platform](cloud-platform-deployment.md)
 9. API naming and versioning
 10. Performance
-11. Creation of data models in a [data modelling tool](data-modeling-tool.md)
-12. Storage of metadata in a [data governance tool](data-governance-tool.md)
-13. Creation of a [data marketplace](data-marketplace.md)
+11. Metrics
+12. Creation of data models in a [data modelling tool](data-modeling-tool.md)
+13. Storage of metadata in a [data governance tool](data-governance-tool.md)
+14. Creation of a [data marketplace](data-marketplace.md)
 
 [james.m.dey](mailto://james.dey@hotmail.com) January 2023

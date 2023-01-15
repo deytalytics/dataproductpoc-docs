@@ -1,4 +1,4 @@
-# Data Product databases
+# Data Product data stores
 In order to provide data to a data consumer, a data product needs to:-
   * Be able to store datasets as a payload
   * Secure access

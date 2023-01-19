@@ -14,7 +14,7 @@ The reasoning for this is:-
 
 It will cover the following topics:- 
 1. The [data mesh principles](data-mesh-principles.md) and what is a data product
-2. The creation of the REST API
+2. [High level data product architecture](dp-architecture.md)
 3. The creation of [data stores](dp-datastores.md) to store data captured from:-
    * Source to an Input Data Port/endpoint
    * Transformed into an abstraction layer

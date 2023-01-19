@@ -24,22 +24,12 @@ It will cover the following topics:-
 5. The creation of [control endpoints](dp-control-endpoint.md) which will allow:-
    * Metadata and controls to be posted to a controls input port
    * Audit logs to be pulled from a controls output port
-6. The documentation required:-
-   * Standard REST API docs which provides:-
-      * API Name
-      * API Version
-      * API Query & Field Parameters
-      * A playground for a web developer to test access to the API
-   * A link to data sharing agreements between
-      * Data source owners and the data product owner
-      * The data product owner and data consumers
-   * A link to a data lineage diagram which describes the flow of data from the input data port to the output data port
-   * A link to a data model of the dataset (diagram and data dictionary) as seen at the output data port
+6. [Required Documentation & Metadata](dp-docs_and_metadata.md)
 7. [Authentication & Authorisation](dp-authentication.md)
 8. How to [deploy to a cloud platform](cloud-platform-deployment.md)
 9. API naming and versioning
-10. Performance
-11. Metrics
+10. [Improving Performance](dp-performance.md)
+11. [Capturing Metrics](dp-metrics.md)
 12. Creation of data models in a [data modelling tool](data-modeling-tool.md)
 13. Storage of metadata in a [data governance tool](data-governance-tool.md)
 14. Creation of a [data marketplace](data-marketplace.md)

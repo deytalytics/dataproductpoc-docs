@@ -28,6 +28,10 @@ In the picture above:-
 6. The data product is code+data/metadata. To ensure consistent builds on multiple cloud platforms it can be containerised using Docker
 7. Similarly to ensure consistent deployment to cloud infrastructure, kubernetes can be specified.
 
+By containerising data products using Docker & Kubernetes, data products can be cloud-agnostic
+
 ![image](dps-in-the-cloud.png)
+
+By defining standardised interfaces, data products can be interoperable. For example, we could have a continents data product and a countries data product feeding a geography data product. This allows for increasingly complex data products to be created
 
 ![image](dp-interoperability.png)

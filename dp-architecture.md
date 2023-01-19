@@ -16,3 +16,18 @@ The data product system architecture has to meet the following:-
 8. Be able to cope with batch, stream and request-response data flows
 
 As Zhamak has come from an API/microservices background the easiest architecture to implement initially is 1 focused on request-response data flows using a REST APIs.
+
+![image](dp-layer-architecture.png)
+
+In the picture above:- 
+1. The ports can be built out as REST API endpoints. 
+2. The data pipeline that moves data between the layers can just be executed as sql statements (similar to dbt concept) fired externally via the control input port
+3. Each layer will hold data in a relational database. The input data layer and output data layer should be able to store the data in a variety of formats e.g. csv, json, parquet etc.
+4. The metadata that can be retrieved via the discovery port can similarly be held in a relational database
+5. If fine grained authorisation is required then a security database can also be within the data product that specifies permissions for particular datasets delivered by the data product.
+6. The data product is code+data/metadata. To ensure consistent builds on multiple cloud platforms it can be containerised using Docker
+7. Similarly to ensure consistent deployment to cloud infrastructure, kubernetes can be specified.
+
+![image](dps-in-the-cloud.png)
+
+![image](dp-interoperability.png)

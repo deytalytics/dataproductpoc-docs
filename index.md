@@ -27,7 +27,7 @@ It will cover the following topics:-
 6. [Required Documentation & Metadata](dp-docs_and_metadata.md)
 7. [Authentication & Authorisation](dp-authentication.md)
 8. How to [deploy to a cloud platform](cloud-platform-deployment.md)
-9. API naming and versioning
+9. [Data Product naming and versioning standards](dp-standards.md)
 10. [Improving Performance](dp-performance.md)
 11. [Capturing Metrics](dp-metrics.md)
 12. Creation of data models in a [data modelling tool](data-modeling-tool.md)

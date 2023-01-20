@@ -1,5 +1,6 @@
 # Data Product Naming & Versioning Standards
 
+## Data Product Naming
 Data products need to be grouped by a business domain so a logical way of grouping will be:-
 [\<organisation>\<business domain>\<data product>\<version>]()
 
@@ -8,7 +9,7 @@ You should resist the temptation to:-
 
 * Make data products follow a particular naming convention for the underlying technology/approach e.g. APIs may have their own naming convention but not all data products are APIs so are unlikely to all be delivered via a http url.
 
-## Versioning
+## Data Product Versioning
 The general principle is that if a data product is put into production, strong change control should be enforced to ensure that data products are only changed if strictly necessary.
 
 Versioning should follow the concept of breaking and non-breaking changes, where a breaking change will impact existing data consumers and a non-breaking change will not impact the data consumer 

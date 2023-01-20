@@ -13,25 +13,25 @@ The reasoning for this is:-
 ![Data Product Anatomy Diagram](dp-anatomy-diagram.jpg)
 
 It will cover the following topics:- 
-1. The [data mesh principles](data-mesh-principles.md) and what is a data product
-2. [High level data product architecture](dp-architecture.md)
-3. The creation of [data stores](dp-datastores.md) to store data captured from:-
+* The [data mesh principles](data-mesh-principles.md) and what is a data product
+* [High level data product architecture](dp-architecture.md)
+* The creation of [data stores](dp-datastores.md) to store data captured from:-
    * Source to an Input Data Port/endpoint
    * Transformed into an abstraction layer
    * Formatted and sent via an Output Data Port/endpoint
-4. The creation of the [discovery endpoint](dp-discovery-endpoint.md) which will allow information about the REST API to be discovered 
+* [Required Documentation & Metadata](dp-docs_and_metadata.md)
+* The creation of the [discovery endpoint](dp-discovery-endpoint.md) which will allow information about the REST API to be discovered 
    i.e. human & machine readable documentation & data dictionary
-5. The creation of [control endpoints](dp-control-endpoint.md) which will allow:-
+* The creation of [control endpoints](dp-control-endpoint.md) which will allow:-
    * Metadata and controls to be posted to a controls input port
    * Audit logs to be pulled from a controls output port
-6. [Required Documentation & Metadata](dp-docs_and_metadata.md)
-7. [Authentication & Authorisation](dp-authentication.md)
-8. How to [deploy to a cloud platform](cloud-platform-deployment.md)
-9. [Data Product naming and versioning standards](dp-standards.md)
-10. [Improving Performance](dp-performance.md)
-11. [Capturing Metrics](dp-metrics.md)
-12. Creation of data models in a [data modelling tool](data-modeling-tool.md)
-13. Storage of metadata in a [data governance tool](data-governance-tool.md)
-14. Creation of a [data marketplace](data-marketplace.md)
+* [Authentication & Authorisation](dp-authentication.md)
+* How to [deploy to a cloud platform](cloud-platform-deployment.md)
+* [Data Product naming and versioning standards](dp-standards.md)
+* [Improving Performance](dp-performance.md)
+* [Capturing Metrics](dp-metrics.md)
+* Creation of data models in a [data modelling tool](data-modeling-tool.md)
+* Storage of metadata in a [data governance tool](data-governance-tool.md)
+* Creation of a [data marketplace](data-marketplace.md)
 
 [james.m.dey](mailto://james.dey@hotmail.com) January 2023

@@ -32,7 +32,7 @@ It will cover the following topics:-
 * [Data Product naming and versioning standards](dp-standards.md)
 * [Data Set naming and versioning standards](ds-standards.md)
 * [Improving Performance](dp-performance.md)
-* [Capturing Metrics](dp-metrics.md)
+* [Capturing Metrics and Auditing](dp-audit-and-metrics.md)
 * Creation of data models in a [data modelling tool](data-modeling-tool.md)
 * Storage of metadata in a [data governance tool](data-governance-tool.md)
 * Creation of a [data marketplace](data-marketplace.md)

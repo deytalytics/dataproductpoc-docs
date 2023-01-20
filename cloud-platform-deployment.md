@@ -24,6 +24,7 @@ a more enteprise level deployment allows for.
 1. Scalability
 2. Containerisation
 3. Multi-cloud platform support
+4. Enterprise level security e.g Single Sign-On (SSO)
 
 For a more professional cloud platform, the code and data+metadata are typically containerised using [Docker](https://www.docker.com/) 
 and encapsulated in [Kubernetes](https://kubernetes.io/) which provides the infrastructure related information that assists with scalablilty rules

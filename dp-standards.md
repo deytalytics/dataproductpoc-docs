@@ -2,6 +2,7 @@
 
 ## Data Product Naming
 Data products need to be grouped by a business domain so a logical way of grouping will be:-
+
 [\<organisation>\<business domain>\<data product>\<version>]()
 
 You should resist the temptation to:-

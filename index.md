@@ -5,10 +5,12 @@ which is in turn based on thinking formulated with [Martin Fowler](https://marti
 
 The purpose of the proof of concept is to assist organisations who are struggling to build a data mesh and data products.
 
-This documentation will be based on a data product with [REST API](https://aws.amazon.com/what-is/restful-api/) at it's core. 
+This documentation will be based initially on a data product with [REST API](https://aws.amazon.com/what-is/restful-api/) at it's core. 
 The reasoning for this is:-
 1. That Zhamak's background is in API architecture so her perspective naturally emerges from that area
 2. Its the easiest data product type to create as its reasonably mature so has plenty of support and code examples 
+
+Later these standards will be adapted for other data product types.
 
 ![Data Product Anatomy Diagram](dp-anatomy-diagram.jpg)
 

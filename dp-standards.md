@@ -13,7 +13,10 @@ You should resist the temptation to:-
 The general principle is that if a data product is put into production, strong change control should be enforced to ensure that data products are only changed if strictly necessary.
 
 Versioning should follow the concept of breaking and non-breaking changes, where a breaking change will impact existing data consumers and a non-breaking change will not impact the data consumer 
-Breaking changes should result in a major version number change i.e. 1.x to 2.x and non-breaking changes should result in a minor version number change e.g. 1.1 to 1.2
+
+Breaking changes should result in a major version number change i.e. 1.x to 2.x
+
+Non-breaking changes should result in a minor version number change e.g. 1.1 to 1.2
 
 
 ## API Naming & Versioning Standards

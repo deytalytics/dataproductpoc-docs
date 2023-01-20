@@ -28,6 +28,7 @@ It will cover the following topics:-
 * [Authentication & Authorisation](dp-authentication.md)
 * How to [deploy to a cloud platform](cloud-platform-deployment.md)
 * [Data Product naming and versioning standards](dp-standards.md)
+* [Data Set naming and versioning standards](ds-standards.md)
 * [Improving Performance](dp-performance.md)
 * [Capturing Metrics](dp-metrics.md)
 * Creation of data models in a [data modelling tool](data-modeling-tool.md)

@@ -42,3 +42,8 @@ e.g.
 Authorisation means ensuring that an authenticated user is permitted to access the requested data. 
 For a REST API, authorisation can be confined to ensuring that a user/role is entitled to access a particular endpoint 
 or more fine grained authorisation can be provided which ensures only certain datasets or even dataset fields are provided.
+
+# Implementing Authentication & Authorisation within an Organisation
+Organisations should implement a mechanism by which access to data products is provided via a gateway where requests can be authenticated using an organisations's preferred authentication method and permissions to access the endpoint
+
+By using a gateway, it provides a central point by which authentication and authorisation can occur. This makes it much easier to audit and removes the reliance on data product development teams implementing enterprise security correctly.

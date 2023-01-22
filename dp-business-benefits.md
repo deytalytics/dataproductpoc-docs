@@ -54,5 +54,5 @@ However, in the case of a data product, you could create:-
    * And then an aggregated sales data product for each continent
    * And finally a global sales data product. 
 The user can then decide which level of data product they want to use in a particular report. This is much more efficient. 
-7. Able to source and provide data in a variety of formats.
+7. Able to source and provide data in a variety of formats - For example, most business users would most likely want to view data as csv files so that they can use Excel, whereas web application developers typically want to deal with data in JSON file format. 
 8. Interoperable - by providing standardised interfaces for data products, data products can be linked together like Lego bricks to provide much more sophisticated solutions.

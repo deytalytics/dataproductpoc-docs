@@ -15,6 +15,7 @@ Later these standards will be adapted for other data product types.
 ![Data Product Anatomy Diagram](dp-anatomy-diagram.jpg)
 
 It will cover the following topics:- 
+* [What is different about data products](dp-business-benefits.md)
 * The [data mesh principles](data-mesh-principles.md) and what is a data product
 * [High level data product architecture](dp-architecture.md)
 * The creation of [data stores](dp-datastores.md) to store data captured from:-

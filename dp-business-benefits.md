@@ -47,11 +47,11 @@ So data products are stepping in to solve this problem. They provide the followi
 3. Improved [security](dp-authentication.md) - access to data products will be via organisation's preferred authentication systems and only accessible, if authorised.
 4. Better trusted - data product documentation will identify where data has come from, when it was updated and what data quality rules have been applied
 5. Better alignment with the business - As business users will be able to search for data products grouped by their functional area, they will be able to be able to read the documentation and examine the data product data for themselves. This will help to easily identify problems with the data. 
-6. Splitting down the data problem - Enterprise data warehouses and data lakes end up as large monoliths of data. This was similar to the situation that existed with application code up until 1990s. Application coders realised that the way to improve things was to split monolithic applications into microservices. Data products can follow the same path.
+6. More efficient - Enterprise data warehouses and data lakes end up as large monoliths of data. This was similar to the situation that existed with application code up until 1990s. Application coders realised that the way to improve things was to split monolithic applications into microservices. Data products can follow the same path.
 For example, in the case of an enterprise data warehouse, you typically join all of your sales data from multiple systems and store in a sales table which can be diced and sliced by a number of dimensional tables e.g. country. When you write a report, you might then filter on country. So you've built a large sales table and are then decomposing it when you query it.
 However, in the case of a data product, you could create:-
-* A sales data product for each country
-* And then an aggregated sales data product for each continent
-* And finally a global sales data product. 
-
+   * A sales data product for each country
+   * And then an aggregated sales data product for each continent
+   * And finally a global sales data product. 
 The user can then decide which level of data product they want to use in a particular report. This is much more efficient. 
+7. Able to source and provide data in a variety of formats.

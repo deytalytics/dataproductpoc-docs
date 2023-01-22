@@ -53,4 +53,5 @@ However, in the case of a data product, you could create:-
 * A sales data product for each country
 * And then an aggregated sales data product for each continent
 * And finally a global sales data product. 
+
 The user can then decide which level of data product they want to use in a particular report. This is much more efficient. 

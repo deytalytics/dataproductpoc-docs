@@ -1,6 +1,6 @@
 # Data Set Naming & Versioning Standards
 
-A data product can make available multiple data sets. For example, from the output data port, we could make avaiable countries, continents or geography data sets with:-
+A data product can make available multiple data sets. For example, from the output data port, if a REST API is built, it could provide countries, continents or geography data sets with:-
 http://<hostname>/REST/<version>/<object>
 e.g. 
 * http://data-products.shell.com/REST/0.1/countries

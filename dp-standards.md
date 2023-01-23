@@ -1,13 +1,16 @@
 # Data Product Naming & Versioning Standards
 
 ## Data Product Naming
-Data products need to be grouped by a business domain so a logical way of grouping will be:-
+Data products need to be grouped by business function/domain appropriately.
 
-[\<organisation>\<business domain>\<data product>\<version>]()
+For example, a data product that belongs to the UK sales department could be grouped under:-
+
+organisation->sales->uk->data_product
+or 
+organisation->uk->sales->data_product
 
 You should resist the temptation to:-
-* Grouping data products by IT systems as systems change over time and data products should align to the business rather than IT.
-
+* Group data products by IT systems as systems change over time and data products should align to the business rather than IT.
 * Make data products follow a particular naming convention for the underlying technology/approach e.g. APIs may have their own naming convention but not all data products are APIs so are unlikely to all be delivered via a http url.
 
 ## Data Product Versioning

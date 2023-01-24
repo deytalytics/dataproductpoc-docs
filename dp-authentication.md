@@ -46,6 +46,6 @@ or more fine grained authorisation can be provided which ensures only certain da
 # Implementing Authentication & Authorisation within an Organisation
 ![Proposed authentication & authorisation architecture](dp-authentication.png)
 
-Organisations should implement a mechanism by which access to data products is provided via a gateway where requests can be authenticated using an organisations's preferred authentication method and permissions to access the endpoint
+Access to data products should be provided via a gateway where requests can be authenticated using an organisations's preferred authentication method and permissions to access the endpoint
 
 By using a gateway, it provides a central point by which authentication and authorisation can occur. This makes it much easier to audit and removes the reliance on data product development teams implementing enterprise security correctly.

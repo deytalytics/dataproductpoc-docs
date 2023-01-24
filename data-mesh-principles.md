@@ -24,7 +24,7 @@ The data product should have defined roles & responsibilities associated with it
    * dataset owner - a person whose responsible for the datasets
    * data product developer - a developer who builds out the date product using a coding language.
 
-3. Self-serve data infrastructure as a platform
+## Self-serve data infrastructure as a platform
 
 The data product should provide sufficient metadata and controls to allow it to be self-served. 
 The capabilities include:-
@@ -44,7 +44,7 @@ The capabilities include:-
    * Federated identity management
    * Compute and data locality
 
-4. Federated computational governance
+## Federated computational governance
 
 This is the data mesh concept. 
 Data products should be able to be deployed on any cloud or on-premises platform that is network accessible. 

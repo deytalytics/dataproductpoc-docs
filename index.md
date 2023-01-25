@@ -42,4 +42,4 @@ It will cover the following topics:-
 * Storage of metadata in a [data governance tool](data-governance-tool.md)
 * Creation of a [data marketplace](data-marketplace.md)
 
-[james.m.dey](mailto://james.dey@hotmail.com) January 2023james.m.dey](mailto://james.dey@hotmail.com) January 2023
+[james.m.dey](mailto://james.dey@hotmail.com) January 2023

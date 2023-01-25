@@ -30,7 +30,7 @@ So data products could be made more efficient by:-
 
 As data products have standardised interfaces this should be achievable.
 
-Further efficiency can be provided by allowing field parameters to be passed to the data product that would allow 
+Further efficiency can be provided by allowing query parameters to be passed to the data product that would allow 
 a data product such as a REST API to simulate some of what SQL can achieve.
 e.g. the REST API developer could code to return a grouped, ordered and filtered UK food sales data set if the following query parameters were provided.
 

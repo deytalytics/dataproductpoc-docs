@@ -33,6 +33,7 @@ As data products have standardised interfaces this should be achievable.
 Further efficiency can be provided by allowing field parameters to be passed to the data product that would allow 
 a data product such as a REST API to simulate some of what SQL can achieve.
 e.g. the REST API developer could code to return a grouped, ordered and filtered UK food sales data set if the following query parameters were provided.
+
 ```https:acme.com/europe/uk/REST/0.1/sales/0.1?group_by=sales_date&order_by=customer_id&product_type='Food'```
 
 There is also nothing to prevent a data virtualisation layer being added with views that pull data sets from data products, cache them and 

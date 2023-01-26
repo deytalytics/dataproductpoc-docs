@@ -3,7 +3,7 @@
 A data product can make available multiple data sets. For example, from the output data port, if a REST API is built, it could provide countries, continents or geography data sets with:-
 http://<hostname>/REST/<version>/<object>
 e.g. 
-* http://data-products.shell.com/REST/0.1/countries
+* http://data-products.acme.com/REST/0.1/countries
 * http://data-products.shell.com/REST/0.1/continents
 * http://data-products.shell.com/REST/0.1/geography
 

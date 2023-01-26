@@ -1,8 +1,16 @@
 # Data Product Naming & Versioning Standards
 
-## Data Product Naming & Grouping
+From a data consumer's perspective, data products:- 
+* Are catalogued on a [data marketplace](data-marketplace.md)
+* Provide [datasets](ds-standards.md) for consumption.
 
-Standardised data product names need to be determined. These should relate to either a business domain or business domain rather than the data sets that the data product provides.
+When naming & versioning data products, we need to make the distinction between the data product, 
+the [data product type](dp-types.md) (e.g. REST API) and the [dataset](ds-standards.md)
+
+## Data Product Naming & Grouping
+Standardised data product names need to be determined. 
+These should relate to either a business domain or business subdomain 
+rather than the data sets that the data product provides or the systems that provide the data
 
 Data products need to be grouped by business domain/sub-domain appropriately.
 
@@ -25,14 +33,3 @@ Versioning should follow the concept of breaking and non-breaking changes, where
 Breaking changes should result in a major version number change i.e. 1.x to 2.x
 
 Non-breaking changes should result in a minor version number change e.g. 1.1 to 1.2
-
-
-## API Naming & Versioning Standards
-API naming & versioning should be controlled by an organisation's existing standards and enforced on an API Gateway/Management system
-
-### API Addressing 
-As APIs use the http protocol the recommendation would be to use:-
-```
-https://<organisation>/<business domain>/<business sub-domain>/<api type(REST|GraphQL)>/<version>/<data set>/<data set version>
-``` 
-where ```<data set version>``` would be optional and default to latest.

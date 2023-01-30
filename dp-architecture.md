@@ -5,12 +5,10 @@ Zhamak's data mesh book provides more of an architectural vision than informatio
 Some information can be gleaned as to what is anticipated, however, from the information in the book and subsequent presentations.
 
 ## Architectural Requirements
+
 The data product system architecture has to have the following architectural features:-
 
 ![data product architectural features](dp-architectural-features.png)
-
-## High Level Architecture diagram
-![image](dp-layer-architecture.png)
 
 ### Self Describing 
 Each data product will maintain it's own documentation within a relational database. This will be available via the discovery port.
@@ -37,6 +35,27 @@ For example, we could have different country sales data products aggregated up t
 global sales data product. This allows for increasingly complex data products to be created
 
 Additionally by placing data products within build and deploy containers we can ensure that they can be placed on any cloud platform which has potential cost benefits in not be tied to a single vendor.
+
+## High Level Architecture diagram
+![image](dp-layer-architecture.png)
+
+## Detailed Architecture diagram
+![detailed data product architecture](detailed-dp-architecture.png)
+
+The data product will have the following capabilities:-
+1. Can pull data (via connectors) from:-
+   * Files on cloud storage
+   * Database endpoints
+   * Files in Data Lakes
+2. Can have data pushed (via connectors) to it by:-
+   * Files (by applications)
+   * Messages (by queues/streams)
+3. Will be performance managed by an API gateway
+4. The API gateway will communicate with authentication and authorisation systems to only allow authorised systems & users to access a particular endpoint
+5. Will record it's metadata in a relational database that can feed an enterprise data catalogue.
+6. Will be published on a data marketplace
+7. Will allow data pipeline sql to be securely injected and executed which will move data from the input connectors to the output data layer for consumption by the web application.
+8. Will have an endpoint that allows metadata and documentation to be retrieved programatically.
 
 ## Proof of Concept Notes
 As Zhamak has come from an API/microservices background the easiest architecture to implement initially is 1 focused on request-response data flows using a REST APIs.

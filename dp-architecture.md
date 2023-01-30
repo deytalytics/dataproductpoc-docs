@@ -26,7 +26,6 @@ Data products can be trusted by ensuring that:-
 * It is well documented
 
 ## Secure
-![data product security](dp-authentication.png)
 As described in [authentication and authorisation](dp-authentication.md), data products can be secured using an organisation's authentication system and authorisation system by linking a data product gateway to those security systems.
 
 ## Inter-Operable

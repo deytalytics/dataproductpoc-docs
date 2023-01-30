@@ -32,8 +32,7 @@ As described in [authentication and authorisation](dp-authentication.md), data p
 By defining standardised interfaces, data products can be interoperable. 
 For example, we could have different country sales data products aggregated up to a continental sales data product  feeding a 
 global sales data product. This allows for increasingly complex data products to be created
-
-Additionally by placing data products within build and deploy containers we can ensure that they can be placed on any cloud platform which has potential cost benefits in not be tied to a single vendor.
+![image](dp-interoperability.png)
 
 ## High Level Architecture diagram
 ![image](dp-layer-architecture.png)
@@ -68,4 +67,3 @@ For the [PoC](dp-tands-poc.md) In the picture above:-
 6. The data product is code+data/metadata. To ensure consistent builds on multiple cloud platforms it can be containerised using Docker
 7. Similarly to ensure consistent deployment to cloud infrastructure, kubernetes can be specified.
 
-![image](dp-interoperability.png)

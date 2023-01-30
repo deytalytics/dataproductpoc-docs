@@ -20,7 +20,7 @@ It will cover the following topics:-
 * [What is special about data products](dp-business-benefits.md)
 * The [data mesh principles](data-mesh-principles.md) and what is a data product
 * [Data Product Types](dp-types.md)
-* [High level data product architecture](dp-architecture.md)
+* [Data product architecture](dp-architecture.md)
 * The creation of [data stores](dp-datastores.md) to store data captured from:-
    * Source to an Input Data Port/endpoint
    * Transformed into an abstraction layer

@@ -23,7 +23,8 @@ There is also some work done on producing a GraphQL API as well as, but less has
 
 That a REST API can be:-
 1. Deployed to a cloud platform (Azure App Service)
-2. Can provide metadata & docs via a discovery port
+2. Can provide metadata & docs via a discovery port. Metadata can also be exported from the relational database. 
+3. Can provide the data pipeline sql as an output so a user knows what transformation has been applied.
 3. Can accept source files in both CSV & JSON format into an input data port
 4. Can accept messages into a queue via an input data port 
 4. Can accept a data dictionary (aka schema) that defines the source files into an input data port
@@ -42,7 +43,6 @@ For example:-
 * Storing metrics for audit purposes is simply capturing http info in the request and saving to a relational table and making the contents available via the Control Output Port. This is similar in concept to item 6. above.
 
 Other factors aren't being demonstrated simply because solutions for these are already known. For example, the following docs/metadata can be linked to the data product using URLs:-
-* Data Lineage diagrams can be generated in Collibra
 * Data models in PowerDesigner 
 * Data Sharing Agreements can be stored in Word docs on Sharepoint
 
@@ -89,10 +89,10 @@ For simplicity, we will be using 2 CSV files as input:-
 * Countries.csv
 * Continents.csv
 
-These will be uploaded to the input data port. 
+These will be uploaded to the input data port using a http POST request 
 
 ### Transformation
-Data pipelining sql can also be uploaded via the input data port which will fire transformation which will merge the data into a continents and countries dataset which will be saved in a relational database in the abstraction layer. 
+Data pipelining sql can be uploaded via the input data port (using a http POST request) which will then fire transformation which will merge the data into a continents and countries dataset which will be saved in a relational database in the abstraction layer. 
 
 ### Output Data
 This abstracted dataset will then be further transformed to json and csv files which will be made available to the data consumer from the output data port 

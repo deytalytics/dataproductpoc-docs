@@ -2,6 +2,20 @@
 
 The aim of the PoC is to be able to deduce a viable set of architectural standards by proving that the concepts are feasible in practice.
 
+# Data Product PoC System Architecture
+
+![data product system architecture](detailed-dp-architecture.png)
+
+For the PoC, we can simplify what needs to be done in production by providing the following:-
+
+1. The ports can be built out as REST API endpoints. 
+2. The data pipeline that moves data between the layers can just be executed as sql statements (similar to dbt concept) fired externally via the control input port
+3. We will upload countries and continents files via the input data port and load these into relational tables
+4. We will also stream countries and continents data into a queue in the input data layer.
+7. The metadata that can be retrieved via the discovery port can similarly be held in a relational database
+8. If fine grained authorisation is required then a security database can also be within the data product that specifies permissions for particular datasets delivered by the data product.
+9. The data product is code+data/metadata. To ensure consistent builds on multiple cloud platforms it can be containerised using Docker
+
 ## What will be proved?
 
 For our PoC we have decided to concentrate on a REST API as the easiest data product type to try to build first.
@@ -11,9 +25,11 @@ That a REST API can be:-
 1. Deployed to a cloud platform (Azure App Service)
 2. Can provide metadata & docs via a discovery port
 3. Can accept source files in both CSV & JSON format into an input data port
+4. Can accept messages into a queue via an input data port 
 4. Can accept a data dictionary (aka schema) that defines the source files into an input data port
-5. Can transform the source files into datasets stored in a relational database
-6. Can provide those datasets in more than 1 format (JSON or CSV) to the output data port
+5. Can transform the source files/messages into datasets 
+6. Can store the datasets in a queue, file or relational database table
+6. Can provide the datasets in more than 1 format (JSON or CSV) to the output data port
 7. Can be secured via basic authentication and authorisation also be imposed to prevent authenticated users who don't have permission to access a particular data set from doing so.
 8. That the data set provided by the REST API can be consumed by a client application e.g Power BI
 

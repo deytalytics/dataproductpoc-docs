@@ -45,11 +45,14 @@ The data product will have the following capabilities:-
    * Files on cloud storage
    * Databricks SQL Warehouse (aka SQL endpoints)
    * Files in Data Lakes
+   * Datasets provided by other APIs
 2. Can have data pushed (via connectors) by:-
-   * Applications into Files
+   * Applications into Files and/or a Relational database table
    * Applications into Queues/Streams
 3. Will be performance managed by an API gateway
-4. The API gateway will communicate with authentication and authorisation systems to only allow authorised systems & users to access a particular endpoint
+4. The Data Product gateway will:-
+   * Communicate with authentication and authorisation systems to only allow authorised systems & users to access a particular endpoint
+   * Standardise URL addressing
 5. Will record it's metadata in a relational database that can feed an enterprise data catalogue.
 6. Will be published on a data marketplace
 7. Will allow data pipeline sql to be securely injected and executed which will move data from the input connectors to the output data layer for consumption by the web application.

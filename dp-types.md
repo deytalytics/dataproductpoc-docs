@@ -2,9 +2,9 @@
 
 | Data Product Category | Data Product Type | Data Product Subtype | 
 |:----------------------|:------------------|:--------------------:|
-| Pull                | API               |         REST         |
-| Pull                | API               |       GraphQL        |
-| Push                | Streaming         |    Message Queue     |  
+| Pull                  | API               |         REST         |
+| Pull                  | API               |       GraphQL        |
+| Pull                  | Streaming         |    Message Queue     |  
 
 
 Data Products can be broadly grouped into categories that describe how a data consumer wishes to access the data

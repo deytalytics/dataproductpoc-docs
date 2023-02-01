@@ -104,3 +104,7 @@ The description information will also include extra [data product metadata](dp-d
 ## How will the data consumer be able to consume the data product data?
 * For a web application developer, the technical demo will demonstrate how to send http POST & GET requests to the REST API endpoints to obtain back responses with data and metadata.
 * For a business user, the demo will demonstrate how a web application that they can access the [docs and metadata](dp-docs_and_metadata.md) about data products from a [data marketplace](data-marketplace.md) and securely access data by logging in from a web application and/or via Power BI.
+
+# What has been completed so far?
+
+![Completed data product PoC architecture](completed-dp-architecture.png)

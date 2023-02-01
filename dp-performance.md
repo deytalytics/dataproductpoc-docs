@@ -34,7 +34,7 @@ There is also nothing to prevent a data virtualisation layer being added with vi
 present them so that they can be queried by business intelligence tools in the normal fashion.
 The standardised interfaces that data products provide make the construction of such a data virtualisation layer easier to develop.
 
-# Reducing dataset size for Power BI reporting
+## Reducing dataset size for Power BI reporting
 With reports, the report developer can create a Power BI report in the normal fashion. 
 Then when there is a need to put the report into production, the SQL query can be used as the data pipeline sql within a data product.
 The Power BI report can then connect to the higher level data product that will return the desired result set. 

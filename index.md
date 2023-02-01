@@ -12,7 +12,8 @@ The reasoning for this is:-
 1. That Zhamak's background is in API architecture so her perspective naturally emerges from that area
 2. Its the easiest data product type to create as its reasonably mature so has plenty of support and code examples 
 
-Later these standards will be adapted for other data product types.
+Additionally Queues/Streams as a data product type will be implemented. 
+This will prove that near real time data updates can be implemented as data products.
 
 ![Data Product Anatomy Diagram](dp-anatomy-diagram.jpg)
 

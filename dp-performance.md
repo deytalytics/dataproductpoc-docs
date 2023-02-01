@@ -28,14 +28,13 @@ So data products could be made more efficient by:-
 * Holding the detailed data at a more granular level
 * Holding summarised data in a higher level data product.
 
-As data products have standardised interfaces this should be achievable.
-
-Further efficiency can be provided by allowing query parameters to be passed to the data product that would allow 
-a data product such as a REST API to simulate some of what SQL can achieve.
-e.g. the REST API developer could code to return a grouped, ordered and filtered UK food sales data set if the following query parameters were provided.
-
-```https:acme.com/europe/uk/REST/0.1/sales/0.1?group_by=sales_date&order_by=customer_id&product_type='Food'```
+As data products have standardised interfaces, it will be easy to construct higher level data products from more granular data products.
 
 There is also nothing to prevent a data virtualisation layer being added with views that pull data sets from data products, cache them and 
 present them so that they can be queried by business intelligence tools in the normal fashion.
 The standardised interfaces that data products provide make the construction of such a data virtualisation layer easier to develop.
+
+# Reducing dataset size for Power BI reporting
+With reports, the report developer can create a Power BI report in the normal fashion. 
+Then when there is a need to put the report into production, the SQL query can be used as the data pipeline sql within a data product.
+The Power BI report can then connect to the higher level data product that will return the desired result set. 

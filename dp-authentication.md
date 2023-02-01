@@ -44,12 +44,20 @@ For a REST API, authorisation can be confined to ensuring that a user/role is en
 For more fine grained data authorisation requirements, authorisation can be provided which ensures only certain datasets or even dataset fields are provided.
 
 # Implementing Authentication & Authorisation within an Organisation
-![Proposed authentication & authorisation architecture](dp-authentication.png)
+![Proposed authentication & authorisation architecture](detailed-dp-architecture.png)
 
-Access to data products should be provided via a gateway where requests can be authenticated using an organisations's preferred authentication method and permissions to access the endpoint
+## Machine to machine authentication & authorisation
+When an application/system needs access to data products:-
+1. Token based authentication should be used 
+2. Access to the data products should be via a gateway
+3. The gateway can then check the token with an authentication system and check that the appllication/system is allowed access to the endpoint via an authorisation system.
 
-By using a gateway, it provides a central point by which authentication and authorisation can occur. This makes it much easier to audit and removes the reliance on data product development teams implementing enterprise security correctly.
+## User to machine authentication & authorisation
+When a user wants to access a data product, then the problem is that only consumer facing applications know who that user is. The user's credentials are typically not passed back to back end systems.
+So in this scenario, user authentication & authorisation needs to occur in the consumer application.
+For example, if a power BI report is created that access an organisations sales information, the user will not be able to access the data source that holds that information directly. They will be authenticated to use Power BI and will be authorised access to the report, not the dataset.
 
+## Fine Grained Authorisation
 Where fine grained data authorisation is required e.g. to omit sensitive field data, 
 the easiest method would be to create 2 versions of a dataset e.g.
 * customers/0.1

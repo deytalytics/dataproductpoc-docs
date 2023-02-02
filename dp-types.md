@@ -21,4 +21,4 @@ The new customer could be initially registered on a sales system e.g. Salesforce
 and the sales system then pushes notifications of new customers via a stream or queue to the email application service
 
 ### Why cannot data products be categorised on the way they are sourced?
-A data product can source and combine data from a variety of data source types.
+A data product can source and combine data from a variety of data source types. 

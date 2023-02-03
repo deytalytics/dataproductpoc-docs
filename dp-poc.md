@@ -2,19 +2,29 @@
 
 The aim of the PoC is to be able to deduce a viable set of architectural standards by proving that the concepts are feasible in practice.
 
+This documentation will be based initially on a data product with [REST API](https://aws.amazon.com/what-is/restful-api/) at it's core. 
+The reasoning for this is:-
+1. That Zhamak's background is in API architecture so her perspective naturally emerges from that area
+2. Its the easiest data product type to create as its reasonably mature so has plenty of support and code examples 
+
+In addition we will demonstrate that Databricks SQL Warehouses (aka SQL endpoints) can be implemented as Data Products (this also will prove that other relational databases can be catered for)
+For streaming, we will also demonstrate that Confluent Kafka can be implemented.
+
 # Data Product PoC System Architecture
 
 ![data product system architecture](detailed-dp-architecture.png)
 
 For the PoC, we can simplify what needs to be done in production by providing the following:-
 
-1. The ports can be built out as REST API endpoints. 
-2. The data pipeline that moves data between the layers can just be executed as sql statements (similar to dbt concept) fired externally via the control input port
+1. The ports can be built out as REST API endpoints, database or queue connections 
+2. The data pipeline that moves data between the layers can just be executed as sql statements. 
+For REST APIs, we will demonstrate the ability to POST transformation sql so that new datasets can be created dynamically. 
+For non-Rest APIs, standard data pipelining software can be used e.g. Azure Data 
 3. We will upload countries and continents files via the input data port and load these into relational tables
 4. We will also stream countries and continents data into a queue in the input data layer.
 7. The metadata that can be retrieved via the discovery port can similarly be held in a relational database
 8. If fine grained authorisation is required then a security database can also be within the data product that specifies permissions for particular datasets delivered by the data product.
-9. The data product is code+data/metadata. To ensure consistent builds on multiple cloud platforms it can be containerised using Docker
+9. The data product is code+data. To ensure consistent builds on multiple cloud platforms it will be containerised using Docker
 
 ## What will be proved?
 
@@ -32,7 +42,7 @@ That a REST API can be:-
 6. Can store the datasets in a queue, file or relational database table
 6. Can provide the datasets in more than 1 format (JSON or CSV) to the output data port
 7. Can be secured via basic authentication and authorisation also be imposed to prevent authenticated users who don't have permission to access a particular data set from doing so.
-8. That the data set provided by the REST API can be consumed by a client application e.g Power BI
+8. That the target data can be securely consumed by a client application e.g Power BI or Python code.
 
 This should be sufficient to prove the concept. 
 
@@ -49,26 +59,27 @@ Other factors aren't being demonstrated simply because solutions for these are a
 <strong>Note: For demonstration to the business, those items as well as a [Data Marketplace](data-marketplace.md) will be mocked up.</strong>
 
 Other factors aren't being demonstrated because they are more relevant for production than for a proof of concept e.g.
-* Creating the app build and app deploy containers to allow a data product to be built and deployed to any major cloud platform 
+* Creating the app deploy container (Kubernetes) to allow a data product to be deployed to any major cloud platform cluster. 
 * The API Gateway
 * Linking to the enterprise authentication and authorisation systems. 
-
 <strong>Note: Integrating an application into an enterprise authentication & authorisation system is non-trivial, typically taking months so is out of scope for the PoC.</strong>
 
-
- 
 ## What tooling will be used in the PoC?
 
-The choices made were for speed of delivery. Every organisation's delivery teams will undoubtedly have different tool choices in most cases, but it's a Proof of Concept, so tools can easily be swapped out so long as they provide the same functionality.
+The choices made were for speed of delivery. Every organisation's delivery teams will undoubtedly have different tool choices in most cases, but it's a 
+Proof of Concept, so tools can easily be swapped out so long as they provide the same functionality.
 
 ### Coding 
-* Coding Language - [Python](https://www.python.org/). This will be used for Front end (using the [Python Flask](https://en.wikipedia.org/wiki/Flask_(web_framework)) module) and Back end  development simply due to familiarity with this language. 
-
+* Coding Language - [Python](https://www.python.org/). This will be used for:-
+* The Front end (using the [Python Flask](https://en.wikipedia.org/wiki/Flask_(web_framework)) module)
+* Back end development 
+simply due to familiarity with this language. 
 <strong>Note: Most delivery teams will have their own preference for front end work, but the PoC is just demonstrating a concept.</strong>
 * Integrated Development Environment (IDE) - [PyCharm](https://www.jetbrains.com/pycharm/) will be used to allow rapid coding of a REST API
 * REST/GraphQL API module - [FastAPI](https://fastapi.tiangolo.com/) chosen because it's a Python module and is a fully featured API builder 
 
 * Code Version Control Repository - [GitHub Repo](https://github.com/deytalytics/DataProductPoC)
+* Build Container - [Docker](https://www.docker.com/products/docker-desktop/)
 
 ### Data
 * Relational Database - [SQLite](https://www.sqlite.org/index.html) - chosen because it's integrated into Python but can be built using Data Definition Language (DDL) scripts and data saved in relational tables using ANSI SQL
@@ -76,10 +87,10 @@ The choices made were for speed of delivery. Every organisation's delivery teams
 ### Security
 * Authentication & Authorisation - handwritten in Python, basic authentication only.
 
-### Infrastructure 
+### Infrastructure
+* Locally, a Docker Container can be run like a virtual machine which is useful if there are delays in servicing access requests to the cloud platform
 * Cloud Platform - [Microsoft Azure](https://portal.azure.com)
-* Cloud Platform Service - [Azure App Service](https://portal.azure.com/#@ShellCorp.onmicrosoft.com/resource/subscriptions/900a266e-8e11-47e1-a8e8-ba3ccfa9f292/resourceGroups/sbox-dataproduct-dev-rg/providers/Microsoft.Web/sites/t-and-s-dp-poc/appServices) 
-
+* Cloud Platform Service - [Azure App Service](https://portal.azure.com/#@ShellCorp.onmicrosoft.com/resource/subscriptions/900a266e-8e11-47e1-a8e8-ba3ccfa9f292/resourceGroups/sbox-dataproduct-dev-rg/providers/Microsoft.Web/sites/t-and-s-dp-poc/appServices)
 <strong>Note: In production, a more sophisticated service solution e.g. [Azure Kubernetes Service (AKS)](https://azure.microsoft.com/en-us/products/kubernetes-service/) might be preferred.</strong>
 
 ## What data will be used in the PoC?
@@ -92,7 +103,7 @@ For simplicity, we will be using 2 CSV files as input:-
 These will be uploaded to the input data port using a http POST request 
 
 ### Transformation
-Data pipelining sql can be uploaded via the input data port (using a http POST request) which will then fire transformation which will merge the data into a continents and countries dataset which will be saved in a relational database in the abstraction layer. 
+Data pipelining sql will be uploaded via the input data port (using a http POST request) which will then fire transformation which will merge the data into a continents and countries dataset which will be saved in a relational database.
 
 ### Output Data
 This abstracted dataset will then be further transformed to json and csv files which will be made available to the data consumer from the output data port 
@@ -100,6 +111,7 @@ This abstracted dataset will then be further transformed to json and csv files w
 ## What docs/metadata will be available in the PoC?
 The REST API will provide standard OpenAPI docs via the /docs discovery endpoint. 
 The description information will also include extra [data product metadata](dp-docs_and_metadata.md)
+This metadata will also be stored in a relational database so that it can be easily extracted to Collibra or non-REST API data consumers can view it.
 
 ## How will the data consumer be able to consume the data product data?
 * For a web application developer, the technical demo will demonstrate how to send http POST & GET requests to the REST API endpoints to obtain back responses with data and metadata.

@@ -2,18 +2,9 @@ The information captured in this Wiki has been deduced by carrying out a [data p
 
 # Introduction
 This website documents how to practically create data products within a data mesh.
+
 It is the instantiation of the architectural theory provided by Zhamak Dehgani in her [Data Mesh book](https://www.oreilly.com/library/view/data-mesh/9781492092384)
 which is in turn based on thinking formulated with [Martin Fowler](https://martinfowler.com/articles/data-mesh-principles.html) whilst at [ThoughtWorks](https://www.thoughtworks.com/)
-
-The purpose of the proof of concept is to assist organisations in understanding how to build a data mesh and data products.
-
-This documentation will be based initially on a data product with [REST API](https://aws.amazon.com/what-is/restful-api/) at it's core. 
-The reasoning for this is:-
-1. That Zhamak's background is in API architecture so her perspective naturally emerges from that area
-2. Its the easiest data product type to create as its reasonably mature so has plenty of support and code examples 
-
-Additionally Queues/Streams as a data product type will be implemented. 
-This will prove that near real time data updates can be implemented as data products.
 
 ![Data Product Anatomy Diagram](dp-anatomy-diagram.jpg)
 

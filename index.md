@@ -37,6 +37,7 @@ It will cover the following topics:-
 * How to [deploy to a cloud platform](cloud-platform-deployment.md)
 * [Data Product naming and versioning standards](dp-standards.md)
    * [REST API naming and versioning standards](REST-api-standards.md)
+   * [Queue/Stream naming and versioning standards](streaming-standards.md)
    * [Data Set naming and versioning standards](ds-standards.md)
 * [Improving Performance](dp-performance.md)
 * [Capturing Metrics and Auditing](dp-audit-and-metrics.md)

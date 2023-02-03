@@ -43,18 +43,26 @@ global sales data product. This allows for increasingly complex data products to
 The data product will have the following capabilities:-
 1. Can pull data (via connectors) from:-
    * Files on cloud storage
-   * Databricks SQL Warehouse (aka SQL endpoints)
-   * Files in Data Lakes
+   * Relational Database sources e.g. Azure Synapse
+   * Data Lake SQL endpoints e.g. Databricks SQL Warehouse
+   * File Storage
    * Datasets provided by other APIs
-2. Can have data pushed (via connectors) by:-
-   * Applications into Files and/or a Relational database table
-   * Applications into Queues/Streams
-3. Will be performance managed by an API gateway
-4. The Data Product gateway will:-
-   * Communicate with authentication and authorisation systems to only allow authorised systems & users to access a particular endpoint
-   * Standardise URL addressing
+2. Can have data pushed (via connectors) by Applications into:-
+   * Files
+   * A Relational database table
+   * A Queue/Steam
+3. Can pull data into Files, a Relational Table or a Queue/Stream from:- 
+   * SQL Endpoints
+   * File Storage
+   * Other APIs
+   * Relational database sources
+4. Can import the data captured in the Input Data Layer into Relational Database Tables 
+5. Will allow data pipeline sql to be securely injected and executed which will move data from the input connectors to the output data layer for consumption by the web application.
+6. Can provide the data to data consumers as either:-
+   * Files
+   * Queues
+4. Will be performance managed by a Data Product gateway
 5. Will record it's metadata in a relational database that can feed an enterprise data catalogue.
-6. Will be published on a data marketplace
-7. Will allow data pipeline sql to be securely injected and executed which will move data from the input connectors to the output data layer for consumption by the web application.
-8. Will have an endpoint that allows metadata and documentation to be retrieved programatically.
+6. Will have it's metadata published on a data marketplace 
+7. Will have an endpoint that allows metadata and documentation to be retrieved programatically.
 

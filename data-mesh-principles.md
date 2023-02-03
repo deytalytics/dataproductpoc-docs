@@ -1,3 +1,7 @@
+# What is a data mesh?
+In terms that most people are familiar with it refers to a world wide web of data products, where data products and specific datasets
+can be reached via web addresses in a similar way to how you would retrieve a web page.
+
 # Data Mesh Principles
 
 ![image](https://images.squarespace-cdn.com/content/v1/5b2d3045e2ccd153f0ad5922/1632344527154-18X6X5U1NC4W3FC4VN32/Picture2.png)
@@ -32,7 +36,7 @@ The capabilities include:-
    * Encryption for data at rest and in motion
    * Data product versioning
    * Data product schema
-   * Data product de-identification
+   * Data product identification
    * Unified data access control and logging
    * Data pipeline implementation and orchestration
    * Data product discovery, catalog registration and publishing
@@ -51,6 +55,15 @@ Data products should be able to be deployed on any cloud or on-premises platform
 Containerisation of data products using technologies such as Docker allows for consistent data product builds to occur.
 Kubernetes allows for cloud-agnostic infrastructure deployement.
 By defining standard interfaces for the ports/endpoints, data products can be controlled and discovered and documentation, metadata and data obtained.
+
+# What is a data product?
+In layman's terms its a method of grouping and packaging up 1 or more datasets for a business purpose. It's similar to a consumer product concept, where milk is an analogy for a dataset and the carton containing the milk that has the metadata (name, barcode, contents info) is analagous to the data product
+
+# What is a data set?
+A dataset just refers to a set of data records and can be:-
+1. A message
+2. A file
+3. A resultset from a SQL query
 
 ## References
 For more detail around these concepts, please refer to:-

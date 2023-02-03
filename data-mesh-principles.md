@@ -57,7 +57,15 @@ Kubernetes allows for cloud-agnostic infrastructure deployement.
 By defining standard interfaces for the ports/endpoints, data products can be controlled and discovered and documentation, metadata and data obtained.
 
 # What is a data product?
-In layman's terms its a method of grouping and packaging up 1 or more datasets for a business purpose. It's similar to a consumer product concept, where milk is an analogy for a dataset and the carton containing the milk that has the metadata (name, barcode, contents info) is analagous to the data product
+In layman's terms its a method of grouping and packaging up 1 or more datasets for a business purpose. 
+It's similar to a consumer product concept, where milk is an analogy for a dataset and the carton containing the milk that has the metadata (name, barcode, contents info) is analagous to the data product
+It needs to:- 
+1. Provide code that moves data from a source to an abstraction layer to a target.
+2. Be containerised so that it can be deployed on an on-premises server or a cloud platform
+3. Provide metadata (information about itself)
+
+Despite Zhamak coming from an API/Microservices background, there is no requirement that this is the way that a data product should be implemented.
+Requirement 1 above could be met by data pipelining or ETL software, and the target dataset and metadata can just as easily be a database table rather than an API endpoint 
 
 # What is a data set?
 A dataset just refers to a set of data records and can be:-

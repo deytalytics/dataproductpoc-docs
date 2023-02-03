@@ -29,12 +29,21 @@ So data products could be made more efficient by:-
 * Holding summarised data in a higher level data product.
 
 As data products have standardised interfaces, it will be easy to construct higher level data products from more granular data products.
-
-There is also nothing to prevent a data virtualisation layer being added with views that pull data sets from data products, cache them and 
-present them so that they can be queried by business intelligence tools in the normal fashion.
-The standardised interfaces that data products provide make the construction of such a data virtualisation layer easier to develop.
+![dp interoperability example](dp-interoperability.png)
 
 ## Reducing dataset size for Power BI reporting
-With reports, the report developer can create a Power BI report in the normal fashion. 
-Then when there is a need to put the report into production, the SQL query can be used as the data pipeline sql within a data product.
-The Power BI report can then connect to the higher level data product that will return the desired result set. 
+With reports, the report developer really has 2 options:-
+
+1. A direct query option. In this scenario, the REST API would still provide metadata
+(e.g. link to data sharing agreement, data lineage, name, version, description, dataset data dictionary, endpoint access info) 
+as this is still vitally important info. But the report developer would make a direct connection to the backend store rather 
+than going via the REST API. This option is suitable where import of data isn't desirable due to need to refresh the data frequently 
+or the dataset being very large and hence a REST API being less performant.
+
+2. An import option. In this scenario a query that would have been generated in Power BI
+(or similar tools) can be injected into a REST API as pipeline SQL, essentially 
+creating a data product that has the query resultset as a dataset/payload. 
+This option works in scenarios where the resulting dataset/payload is relatively small. 
+The import option is also the recommended option for modern BI tools such as 
+Power BI as Power BI can apply more complex functions than are available in 
+straight SQL.

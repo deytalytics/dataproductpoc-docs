@@ -42,10 +42,12 @@ A data lake avoids expensive updates of existing data, so can cope with much lar
 
 The downsides of a data lake include:-
 1. As the raw data is stored in a variety of formats, it originally required IT to be able to write code to extract analytics for business users. Later SQL interfaces partially circumvented this problem, however.
-2. Physically stored data is typically not understandable to anybody who doesn't work in IT and isn't familiar with the source systems.
-3. Business users cannot easily get access to data in the data lake nor discover what data is in there. 
-4. Raw data in the data lake is of poor quality and hence cannot be trusted.
-5. Data security is often a problem with data lakes as it can be the case that a user who is given access to a data lake can see files that they should not be permitted to see.
+2. Physically stored raw data is typically not understandable to anybody who doesn't work in IT and isn't familiar with the source systems.
+3. Curated data is still typically created by IT. Business areas might supply requirements but are reliant on IT to implement correctly.
+4. Business users cannot easily get access to data in the data lake nor discover what data is in there. 
+5. A monolithic data lake contains datasets from business areas throughout the organisation. So even if business users can access the monolithic data lake, its a case of not being able to see the wood for the trees. 
+6. Raw data in the data lake is of poor quality and hence cannot be trusted.
+7. Data security is often a problem with data lakes as it can be the case that a user who is given access to a data lake can see files that they should not be permitted to see.
 
 # Data Products
 So data products are stepping in to solve this problem. They will provide the following key benefits to an organisation:-
@@ -53,6 +55,14 @@ So data products are stepping in to solve this problem. They will provide the fo
 1. A [data marketplace](data-marketplace.md) - which will allow a user to search for data products by business function.
 
 ![A data marketplace](data-marketplace.png)
+
+2. A data product admin website will allow business areas (and their data analysts) to securely configure:-
+   * [Data product metadata](dp-docs_and_metadata.md)
+   * Where to source data from e.g the data lake, a filestore, a relational database etc.
+   * Technical data quality rules
+   * Source to target transformation written in SQL
+
+   They will also be able to view data product metrics and audit logs.
 
 2. [Documentation](dp-docs_and_metadata.md) - each data product will contain (or provide links to) documentation which allows the user to fully understand:-
    * What the data product can provide

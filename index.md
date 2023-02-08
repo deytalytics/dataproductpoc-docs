@@ -11,30 +11,30 @@ which is in turn based on thinking formulated with [Martin Fowler](https://marti
 It will cover the following topics:- 
 * [What is special about data products](dp-business-benefits.md)
 * The [data mesh principles](data-mesh-principles.md) and what is a data product
-* [Data Product Types](dp-types.md)
+* [Data product types](dp-types.md)
 * [Data product architecture](dp-architecture.md)
 * The creation of [data stores](dp-datastores.md) to store data captured from:-
    * Source to an Input Data Port/endpoint
    * Transformed into an abstraction layer
    * Formatted and sent via an Output Data Port/endpoint
-* [Required Documentation & Metadata](dp-docs_and_metadata.md)
+* [Required documentation & metadata](dp-docs_and_metadata.md)
 * The creation of the [discovery endpoint](dp-discovery-endpoint.md) which will allow information about the REST API to be discovered 
    i.e. human & machine readable documentation & data dictionary
 * The creation of [control endpoints](dp-control-endpoint.md) which will allow:-
    * Metadata and controls to be posted to a controls input port
    * Audit logs to be pulled from a controls output port
-* [Improving Data Quality](dp-data-quality.md)
-* [Authentication & Authorisation](dp-authentication.md)
+* [Improving data quality](dp-data-quality.md)
+* [Authentication & authorisation](dp-authentication.md)
 * How to [deploy to a cloud platform](cloud-platform-deployment.md)
-* [Data Product naming and versioning standards](dp-standards.md)
+* [Data product naming and versioning standards](dp-standards.md)
    * [REST API naming and versioning standards](REST-api-standards.md)
-   * [Queue/Stream naming and versioning standards](streaming-standards.md)
-   * [Data Set naming and versioning standards](ds-standards.md)
+   * [Dataset naming and versioning standards](ds-standards.md)
 * [Improving Performance](dp-performance.md)
-* [Capturing Metrics and Auditing](dp-audit-and-metrics.md)
+* [Capturing metrics and auditing](dp-audit-and-metrics.md)
 * Creation of data models in a [data modelling tool](data-modeling-tool.md)
+* How to create and where to store data lineage diagrams
 * Storage of metadata in a [data governance tool](data-governance-tool.md)
 * Creation of a [data marketplace](data-marketplace.md)
 * [Infrastructure](dp-infrastructure.md)
 
-[james.m.dey](mailto://james.dey@hotmail.com) January 2023
+[james.m.dey](mailto://james.dey@hotmail.com) February 2023

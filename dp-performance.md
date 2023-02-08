@@ -17,7 +17,7 @@ SQL provides much more sophisticated control over what will be returned in a dat
 
 ## Improving performance 
 
-Given these differences how can we improve performance?
+Given these differences how can we ensure/improve performance?
 
 Well if you consider that analytical systems are aggregating information, do data products necessarily have to hold aggregated data sets?
 Remember 1 of the key features of the data product/data mesh concept is that they should be decentralised / federated?
@@ -31,17 +31,18 @@ So data products could be made more efficient by:-
 As data products have standardised interfaces, it will be easy to construct higher level data products from more granular data products.
 ![dp interoperability example](dp-interoperability.png)
 
-## Reducing dataset size for Power BI reporting
+## Reducing dataset size for BI reporting
 With reports, the report developer really has 2 options:-
 
-1. A direct query option. In this scenario, the REST API would still provide metadata
-(e.g. link to data sharing agreement, data lineage, name, version, description, dataset data dictionary, endpoint access info) 
-as this is still vitally important info. But the report developer would make a direct connection to the backend store rather 
-than going via the REST API. This option is suitable where import of data isn't desirable due to need to refresh the data frequently 
-or the dataset being very large and hence a REST API being less performant.
+1. A direct query option. In this scenario, where the report is expected to directly query a data source, 
+the easiest solution is to simply allow the report developer to be able to securely connect to the dataset database as a datasource.  
+The report developer will be able to find the relevant metadata either by going to:-
+   * The data marketplace
+   * The enterprise data catalog
+   * Querying the metadata database
 
-2. An import option. In this scenario a query that would have been generated in Power BI
-(or similar tools) can be injected into a REST API as pipeline SQL, essentially 
+2. An import option. In this scenario a query that would have been generated in the reporting tool
+can be injected into the data product as pipeline SQL, essentially 
 creating a data product that has the query resultset as a dataset/payload. 
 This option works in scenarios where the resulting dataset/payload is relatively small. 
 The import option is also the recommended option for modern BI tools such as 

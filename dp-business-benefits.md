@@ -64,7 +64,7 @@ So data products are stepping in to solve this problem. They will provide the fo
 
    They will also be able to view data product metrics and audit logs.
 
-2. [Documentation](dp-docs_and_metadata.md) - each data product will contain (or provide links to) documentation which allows the user to fully understand:-
+3. [Documentation](dp-docs_and_metadata.md) - each data product will contain (or provide links to) documentation which allows the user to fully understand:-
    * What the data product can provide
    * Where it came from
    * How good the data quality (DQ) is and the DQ rules have been implemented
@@ -73,17 +73,17 @@ So data products are stepping in to solve this problem. They will provide the fo
    * How to get access to the data
    * Service Level Agreements
 
-3. Improved [security](dp-authentication.md) - access to data products will be via an organisation's preferred authentication & authorisation systems. This ensures that data sets (delivered by the data products) are only made available to authorised workers. 
+4. Improved [security](dp-authentication.md) - access to data products will be via an organisation's preferred authentication & authorisation systems. This ensures that data sets (delivered by the data products) are only made available to authorised workers. 
 Additionally, audit logs will be kept within each data product to track who has been accessing which dataset and when.
 
 ![Authentication & Authorisation](dp-authentication.png)
 
-4. Better trusted - data product [documentation](dp-docs_and_metadata.md) will identify:-
+5. Better trusted - data product [documentation](dp-docs_and_metadata.md) will identify:-
    * Where data has come from (via data lineage diagrams)
    * When it was updated
    * What [data quality rules](dp-data-quality.md) have been applied
    
-5. Better alignment with the business - As business users will be able to search for data products grouped by their functional area, 
+6. Better alignment with the business - As business users will be able to search for data products grouped by their functional area, 
 they will be able to be able to read the documentation and examine the data product data for themselves. 
 This will help to easily identify problems with the data both within their business area and across business areas for data that needs to be reported on 
 at a higher level. 
@@ -100,10 +100,10 @@ However, in the case of a data product, you could create:-
    * And then an aggregated sales data product for each continent/market
    * And finally a global sales data product. 
 The user can then decide which level of data product they want to use in a particular report. This is much more efficient. 
-7. Able to source and provide data in a variety of format - For example:-
+8. Able to source and provide data in a variety of format - For example:-
    * Most business users would most likely want to view data as CSV files so that they can use Excel
    * Web application developers typically want to deal with data in JSON file format.
    * Data scientists may want Parquet or ORC file formats due to their more efficient storage improving Big Data queries
-8. Interoperable - by providing standardised interfaces for data products, data products can be linked together like Lego bricks to provide more sophisticated solutions.
+9. Interoperable - by providing standardised interfaces for data products, data products can be linked together like Lego bricks to provide more sophisticated solutions.
 
 ![Lego Bricks](lego-bricks.jpg)

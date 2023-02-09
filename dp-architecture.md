@@ -38,7 +38,11 @@ global sales data product. This allows for increasingly complex data products to
 ![image](dp-layer-architecture.png)
 
 ## Detailed Architecture diagram
-![detailed data product architecture](detailed-dp-architecture.png)
+
+The diagram shows a more detailed view as to how data products in general work and covers both data product creation and data product consumption.
+Further sections below will split this out and focus on different ways that you can consume datasets
+
+![detailed data product architecture](detailed-dp-architecture-overview.png)
 
 The data product will have the following capabilities:-
 1. Can pull data (via connectors) from:-
@@ -72,3 +76,37 @@ The data product will have the following capabilities:-
    * Published on a data marketplace (useful for business users)
    * Made available from a discovery port/endpoint (useful for developers)
    * Made available by querying the metadata database directly (useful for data analysts)
+
+### Data Product & Dataset Creation
+
+The diagram below explains how it's envisaged that Data Products & Datasets can be created
+![Data product & dataset creation](data-product-creation.png)
+
+### Dataset Consumption
+Slightly different consumption patterns will exist dependent on the manner in which the data consumer wants to be able to access a data product dataset.
+The options are via
+* An API endpoint
+* From a relational database
+* From a queue
+
+#### Dataset consumption via an API endpoint
+The diagram below explains how it's envisaged that a dataset can be retrieved from an API endpoint
+
+![API dataset consumption](api-dataset-consumption.png)
+
+#### Dataset consumption from a relational database
+The diagram below shows an alternative path by which the user can retrieve a dataset by directly fetching it from the dataset database
+
+![Database dataset consumption](database-dataset-consumption.png)
+
+### Dataset Population
+
+When a data product container is first started and/or when the data product admin website requests that a data pipeline be executed then the following occurs:-
+
+1. Code ensures that Source datasets are fetched from the data sources and landed into the src_data schema in the dataset database
+2. Code executes the pipeline.sql script which uses sql to transform the data into an abstracted form and then populates a target dataset table in the target_data schema in the dataset database. The pipeline.sql script also controls dataset versioning
+3. Code runs to extract the target dataset data from the dataset database and save it in CSV and JSON files
+
+Additionally, the data product team can upload a datadictionary (schema.csv) file into the metadata database which fully describes the target dataset.
+
+![dataset population](dataset-population.png)

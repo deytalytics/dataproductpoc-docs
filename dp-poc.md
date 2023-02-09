@@ -12,7 +12,7 @@ For streaming, we will also demonstrate that Confluent Kafka can be implemented.
 
 # Data Product PoC System Architecture
 
-![data product system architecture](detailed-dp-architecture.png)
+![data product system architecture](detailed-dp-architecture-overview.png)
 
 For the PoC, we can simplify what needs to be done in production by providing the following:-
 

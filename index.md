@@ -14,8 +14,8 @@ It will cover the following topics:-
 * [Data product types](dp-types.md)
 * [Data product architecture](dp-architecture.md)
    * [Data product & dataset creation architecture](data-product-and-dataset-creation.md)
-   * [Dataset consumption architecture](dataset-consumption.md)
    * [Dataset population architecure ](dataset-population.md)
+   * [Dataset consumption architecture](dataset-consumption.md)
 * The creation of [data stores](dp-datastores.md) to store data captured from:-
    * Source to an Input Data Port/endpoint
    * Transformed into an abstraction layer

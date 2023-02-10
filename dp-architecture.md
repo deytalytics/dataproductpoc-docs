@@ -79,7 +79,7 @@ The data product will have the following capabilities:-
    * Made available from a discovery port/endpoint (useful for developers)
    * Made available by querying the metadata database directly (useful for data analysts)
 
-To provide more focus as to how data product functionality works, 
+To provide more focus as to how data product functionality works in practice, 
 further architecture diagrams are provided that focus on the following aspects of the architecture:-
 * [Data Product & Dataset Creation](data-product-and-dataset-creation.md)
 * [Dataset Consumption](dataset-consumption.md)

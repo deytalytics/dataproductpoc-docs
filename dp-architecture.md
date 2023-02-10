@@ -20,11 +20,12 @@ Data products will be discoverable via a [data marketplace](data-marketplace.md)
 
 ### Addressable
 Data products will be provided with standardised addresses e.g
+```
 https://data-products.acme.com/global/0.1/sales/0.1
 https://data-products.acme.com/global/divisionA/0.1/sales/0.1
 https://data-products.acme.com/global/divisionA/departmentA/0.1/sales/0.1
 https://data-products.acme.com/global/divisionA/departmentB/0.1/sales/0.1
-
+```
 By providing standardised addresses, it makes it quicker to get at datasets. And transforms data products into a world wide web of data.
 
 ## Trustworthy

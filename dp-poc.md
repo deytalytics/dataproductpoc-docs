@@ -25,7 +25,7 @@ For the PoC, we can simplify what needs to be done in production by providing th
 2. The data pipeline that moves data between the layers can just be executed as sql statements. 
 We will demonstrate the ability to POST transformation sql so that new datasets can be created dynamically. 
 3. We will upload countries and continents files via the input data port and load these into relational tables
-4. We will also stream countries and continents data into a queue in the input data layer.
+4. We will also stream countries and continents data into a Confluent Kafka queue in the input data layer.
 7. The metadata that can be retrieved via the discovery port will be stored in a relational database so can also be accessed via standard SQL queries
 8. A dataset authorisation database will link users to roles and roles to datasets. 
 These dataset authorisation permissions will be implemented as grant policies against the target datasets 
@@ -40,18 +40,18 @@ We will prove that a data product can:-
 3. Provide the data pipeline sql as an output so a user knows what transformation has been applied.
 4. Can accept source files in both CSV & JSON format into an input data port
 5. Be triggered to pull in source datasets from an Azure Data Lake via a Databricks SQL warehouse.
-6. Can accept messages into a queue via an input data port 
+6. Can accept messages into a Confluent Kafka queue via an input data port 
 7. Can accept a data dictionary (aka schema) that defines the source files into an input data port
 8. Can transform the source files/messages into target datasets using a pipeline.sql script injected into an input data port 
 9. Can store the target datasets in a queue, file or relational database table
 10. Can provide the target datasets in more than 1 format (JSON or CSV) to the output data port
-11. Can be secured via:-
+11. Can be [secured](dp-authentication.md) via:-
    * user authentication
    * data product authorisation 
    * target dataset authorisation 
 12. That the target data can be securely consumed by a client application e.g Power BI or Python code.
 13. That the data, metadata and pipeline and schema files can be maintained by a mockup of a data product admin website
-14. That data products can be discovered via a mockup of a data marketplace.
+14. That data products can be discovered via a mockup of a [data marketplace](data-marketplace.md).
 
 This should be sufficient to prove the concept. 
 
@@ -67,7 +67,7 @@ Other factors aren't being demonstrated simply because solutions for these are a
 
 Other factors aren't being demonstrated because they are more relevant for production than for a proof of concept e.g.
 * Creating the deploy container (Kubernetes) to allow the code to be deployed to any major cloud platform cluster. 
-* The API Gateway
+* The API Gateway/API Management
 
 ## What tooling will be used in the PoC?
 
@@ -89,6 +89,8 @@ Proof of Concept, so tools can easily be swapped out so long as they provide the
   * It's available on Azure
   * Uses a Native rather than an ODBC driver to connect from Python so is operating system agnostic.
   * Can store relational and non-relational data
+* File Storage - Azure File Storage?
+* Queue - Confluent Kafka
 
 ### Security
 * Authentication & Authorisation - handwritten in Python, basic authentication only initially.
@@ -116,12 +118,16 @@ We will be demonstrating 2 main methods for getting these source datasets into t
 Data pipelining sql will be uploaded via the input data port (using a http POST request) which will then fire transformation which will merge the data into a continents and countries dataset which will be saved in a relational database.
 
 ### Output Data
-This abstracted dataset will then be further transformed to json and csv files which will be made available to the data consumer from the output data port 
+This abstracted dataset will then be further transformed to json and csv files which will be made available to the data consumer from:-
+* the dataset database
+* the output data port
+and/or
+* a Confluent Kafka queue
 
 ## What docs/metadata will be available in the PoC?
-The REST API will provide standard OpenAPI docs via the /docs discovery endpoint. 
+The REST API will provide standard OpenAPI docs via the /docs discovery port. 
 The description information will also include extra [data product metadata](dp-docs_and_metadata.md)
-This metadata will also be stored in a relational database so that it can be easily extracted to Collibra or non-REST API data consumers can view it.
+This metadata will also be stored in a relational database so that it can be easily extracted to [Collibra](https://shell.collibra.com/dashboard) or non-REST API data consumers can view it.
 
 ## How will the data consumer be able to consume the data product data?
 * For a web application developer, the technical demo will demonstrate how to send http POST & GET requests to the REST API endpoints to obtain back responses with data and metadata.

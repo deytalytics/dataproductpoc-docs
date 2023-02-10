@@ -19,7 +19,13 @@ Data products will be discoverable via a [data marketplace](data-marketplace.md)
    * In a metadata database. This can be queried and metadata transferred into the enterprise data catalog. Either the metadata database or the enterprise data catalog can then provide the metadata to a data marketplace which users will use to search for data products.
 
 ### Addressable
-Data products will be provided with standardised addresses via a Gateway.
+Data products will be provided with standardised addresses e.g
+https://data-products.acme.com/global/0.1/sales/0.1
+https://data-products.acme.com/global/divisionA/0.1/sales/0.1
+https://data-products.acme.com/global/divisionA/departmentA/0.1/sales/0.1
+https://data-products.acme.com/global/divisionA/departmentB/0.1/sales/0.1
+
+By providing standardised addresses, it makes it quicker to get at datasets. And transforms data products into a world wide web of data.
 
 ## Trustworthy
 Data products can be trusted by ensuring that:-

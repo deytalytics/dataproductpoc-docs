@@ -21,7 +21,9 @@ The data product can be broken down into 3 main architectural components:-
    * Data & Metadata
    * Infrastructure 
 
-Code and Data & Metadata is expected to be containerised and utilise enterprise infrastructure
+Code is expected to be containerised so that it can be easily deployed and scaled on cloud platforms. 
+Data and Metadata should persisted.
+Both should use enterprise infrastructure.
 
 The data product should have defined roles & responsibilities associated with it
    * data product owner - the person responsible in the business for the data product
@@ -36,7 +38,7 @@ The capabilities include:-
    * Encryption for data at rest and in motion
    * Data product versioning
    * Data product schema
-   * Data product identification
+   * Data product de-identification
    * Unified data access control and logging
    * Data pipeline implementation and orchestration
    * Data product discovery, catalog registration and publishing
@@ -52,7 +54,7 @@ The capabilities include:-
 
 This is the data mesh concept. 
 Data products should be able to be deployed on any cloud or on-premises platform that is network accessible. 
-Containerisation of data products using technologies such as Docker allows for consistent data product builds to occur.
+Containerisation of data products using technologies such as Docker allows for consistent data product code builds to occur and for the code to be deployable to both on-premise and cloud platforms. 
 Kubernetes allows for cloud-agnostic infrastructure deployement.
 By defining standard interfaces for the ports/endpoints, data products can be controlled and discovered and documentation, metadata and data obtained.
 
@@ -61,11 +63,10 @@ In layman's terms its a method of grouping and packaging up 1 or more datasets f
 It's similar to a consumer product concept, where milk is an analogy for a dataset and the carton containing the milk that has the metadata (name, barcode, contents info) is analagous to the data product
 It needs to:- 
 1. Provide code that moves data from a source to an abstraction layer to a target.
-2. Be containerised so that it can be deployed on an on-premises server or a cloud platform
+2. Containerise the code so that it can be deployed on an on-premises server or a cloud platform
 3. Provide metadata (information about itself)
 
 Despite Zhamak coming from an API/Microservices background, there is no requirement that this is the way that a data product should be implemented.
-Requirement 1 above could be met by data pipelining or ETL software, and the target dataset and metadata can just as easily be a database table rather than an API endpoint 
 
 # What is a data set?
 A dataset just refers to a set of data records and can be:-

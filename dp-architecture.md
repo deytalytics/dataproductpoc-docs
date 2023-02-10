@@ -32,8 +32,9 @@ As described in [authentication and authorisation](dp-authentication.md), data p
 
 ## Inter-Operable
 By defining standardised interfaces, data products can be interoperable. 
-For example, we could have different country sales data products aggregated up to a continental sales data product  feeding a 
-global sales data product. This allows for increasingly complex data products to be created
+For example, we could have department A configure a data product to provide its sales data as a dataset. Department B could likewise create a data product serving up it's sales dataset. 
+A division could then create a data product that aggregates up the sales datasets from department A and B. And then different divisional data products sales datasets can be consumed by an organisational data product.
+This ability to mix and match data products by providing standardised interfaces means that increasingly complex data products can be created from basic building blocks.
 ![image](dp-interoperability.png)
 
 ## High Level Architecture diagram

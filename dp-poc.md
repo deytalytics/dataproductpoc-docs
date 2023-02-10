@@ -1,14 +1,19 @@
 # Data Product Proof of Concept (PoC)
 
-The aim of the PoC is to be able to deduce a viable set of architectural standards by proving that the concepts are feasible in practice.
+The aim of the PoC is to be able to deduce a viable set of architectural standards by proving that the concepts 
+outlined in this Architecture Wiki are feasible in practice.
 
-This documentation will be based initially on a data product with [REST API](https://aws.amazon.com/what-is/restful-api/) at it's core. 
-The reasoning for this is:-
-1. That Zhamak's background is in API architecture so her perspective naturally emerges from that area
-2. Its the easiest data product type to create as its reasonably mature so has plenty of support and code examples 
+This documentation will be based initially on a data product with [REST API](https://aws.amazon.com/what-is/restful-api/) at it's core.
 
-In addition we will demonstrate that Databricks SQL Warehouses (aka SQL endpoints) can be implemented as Data Products (this also will prove that other relational databases can be catered for)
-For streaming, we will also demonstrate that Confluent Kafka can be implemented.
+The REST API is particularly useful to:-
+* Inject source datasets or trigger the code to pull in source datasets
+* Trigger the data pipeline SQL
+* Containerise the code
+
+Other methods are possible, however.
+
+The choice of a REST API does not affect the way that target datasets are consumed. 
+The PoC will demonstrate that data & metadata can also be retrieved securely from a relational database and a queue
 
 # Data Product PoC System Architecture
 
@@ -18,31 +23,35 @@ For the PoC, we can simplify what needs to be done in production by providing th
 
 1. The ports can be built out as REST API endpoints, database or queue connections 
 2. The data pipeline that moves data between the layers can just be executed as sql statements. 
-For REST APIs, we will demonstrate the ability to POST transformation sql so that new datasets can be created dynamically. 
-For non-Rest APIs, standard data pipelining software can be used e.g. Azure Data 
+We will demonstrate the ability to POST transformation sql so that new datasets can be created dynamically. 
 3. We will upload countries and continents files via the input data port and load these into relational tables
 4. We will also stream countries and continents data into a queue in the input data layer.
-7. The metadata that can be retrieved via the discovery port can similarly be held in a relational database
-8. If fine grained authorisation is required then a security database can also be within the data product that specifies permissions for particular datasets delivered by the data product.
-9. The data product is code+data. To ensure consistent builds on multiple cloud platforms it will be containerised using Docker
+7. The metadata that can be retrieved via the discovery port will be stored in a relational database so can also be accessed via standard SQL queries
+8. A dataset authorisation database will link users to roles and roles to datasets. 
+These dataset authorisation permissions will be implemented as grant policies against the target datasets 
+held in the dataset database, thus preventing unauthorised access by users who directly query this information.
+9. To ensure consistent builds on multiple cloud platforms the code will be containerised. For the PoC, we will rely on the Azure App Service container. For local deployment, we will use Docker.
 
 ## What will be proved?
 
-For our PoC we have decided to concentrate on a REST API as the easiest data product type to try to build first.
-There is also some work done on producing a GraphQL API as well as, but less has currently been implemented. 
-
-That a REST API can be:-
-1. Deployed to a cloud platform (Azure App Service)
-2. Can provide metadata & docs via a discovery port. Metadata can also be exported from the relational database. 
-3. Can provide the data pipeline sql as an output so a user knows what transformation has been applied.
-3. Can accept source files in both CSV & JSON format into an input data port
-4. Can accept messages into a queue via an input data port 
-4. Can accept a data dictionary (aka schema) that defines the source files into an input data port
-5. Can transform the source files/messages into datasets 
-6. Can store the datasets in a queue, file or relational database table
-6. Can provide the datasets in more than 1 format (JSON or CSV) to the output data port
-7. Can be secured via basic authentication and authorisation also be imposed to prevent authenticated users who don't have permission to access a particular data set from doing so.
-8. That the target data can be securely consumed by a client application e.g Power BI or Python code.
+We will prove that a data product can:-
+1. Be containerised and deployed to a cloud platform (Azure App Service)
+2. Provide metadata & docs via an API endpoint and a relational database. Metadata can also be exported from the relational database. 
+3. Provide the data pipeline sql as an output so a user knows what transformation has been applied.
+4. Can accept source files in both CSV & JSON format into an input data port
+5. Be triggered to pull in source datasets from an Azure Data Lake via a Databricks SQL warehouse.
+6. Can accept messages into a queue via an input data port 
+7. Can accept a data dictionary (aka schema) that defines the source files into an input data port
+8. Can transform the source files/messages into target datasets using a pipeline.sql script injected into an input data port 
+9. Can store the target datasets in a queue, file or relational database table
+10. Can provide the target datasets in more than 1 format (JSON or CSV) to the output data port
+11. Can be secured via:-
+   * user authentication
+   * data product authorisation 
+   * target dataset authorisation 
+12. That the target data can be securely consumed by a client application e.g Power BI or Python code.
+13. That the data, metadata and pipeline and schema files can be maintained by a mockup of a data product admin website
+14. That data products can be discovered via a mockup of a data marketplace.
 
 This should be sufficient to prove the concept. 
 
@@ -56,13 +65,9 @@ Other factors aren't being demonstrated simply because solutions for these are a
 * Data models in PowerDesigner 
 * Data Sharing Agreements can be stored in Word docs on Sharepoint
 
-<strong>Note: For demonstration to the business, those items as well as a [Data Marketplace](data-marketplace.md) will be mocked up.</strong>
-
 Other factors aren't being demonstrated because they are more relevant for production than for a proof of concept e.g.
-* Creating the app deploy container (Kubernetes) to allow a data product to be deployed to any major cloud platform cluster. 
+* Creating the deploy container (Kubernetes) to allow the code to be deployed to any major cloud platform cluster. 
 * The API Gateway
-* Linking to the enterprise authentication and authorisation systems. 
-<strong>Note: Integrating an application into an enterprise authentication & authorisation system is non-trivial, typically taking months so is out of scope for the PoC.</strong>
 
 ## What tooling will be used in the PoC?
 
@@ -71,21 +76,24 @@ Proof of Concept, so tools can easily be swapped out so long as they provide the
 
 ### Coding 
 * Coding Language - [Python](https://www.python.org/). This will be used for:-
-* The Front end (using the [Python Flask](https://en.wikipedia.org/wiki/Flask_(web_framework)) module)
-* Back end development 
-simply due to familiarity with this language. 
+  * The Front end (using the [Python Flask](https://en.wikipedia.org/wiki/Flask_(web_framework)) module)
+  * Back end development simply due to familiarity with this language. 
 <strong>Note: Most delivery teams will have their own preference for front end work, but the PoC is just demonstrating a concept.</strong>
 * Integrated Development Environment (IDE) - [PyCharm](https://www.jetbrains.com/pycharm/) will be used to allow rapid coding of a REST API
-* REST/GraphQL API module - [FastAPI](https://fastapi.tiangolo.com/) chosen because it's a Python module and is a fully featured API builder 
-
+* REST/GraphQL API module - [FastAPI](https://fastapi.tiangolo.com/) chosen because it's a Python module and is a fully featured API builder
 * Code Version Control Repository - [GitHub Repo](https://github.com/deytalytics/DataProductPoC)
-* Build Container - [Docker](https://www.docker.com/products/docker-desktop/)
+* Local Build Container - [Docker](https://www.docker.com/products/docker-desktop/)
 
 ### Data
-* Relational Database - [SQLite](https://www.sqlite.org/index.html) - chosen because it's integrated into Python but can be built using Data Definition Language (DDL) scripts and data saved in relational tables using ANSI SQL
+* Relational Database - [Azure Database for PostgreSQL](https://learn.microsoft.com/en-us/azure/postgresql/) - chosen because:-
+  * It's available on Azure
+  * Uses a Native rather than an ODBC driver to connect from Python so is operating system agnostic.
+  * Can store relational and non-relational data
 
 ### Security
-* Authentication & Authorisation - handwritten in Python, basic authentication only.
+* Authentication & Authorisation - handwritten in Python, basic authentication only initially.
+It is hoped that an enterprise solution for authenticating a user and obtaining an ID token that can be passed to the data product and dataset authorisation systems will be found but is not yet guaranteed.
+
 
 ### Infrastructure
 * Locally, a Docker Container can be run like a virtual machine which is useful if there are delays in servicing access requests to the cloud platform
@@ -100,7 +108,9 @@ For simplicity, we will be using 2 CSV files as input:-
 * Countries.csv
 * Continents.csv
 
-These will be uploaded to the input data port using a http POST request 
+We will be demonstrating 2 main methods for getting these source datasets into the data product:-
+   * Pull these files from an Azure Data Lake via Databricks SQL Warehouse
+   * Push these files into the data product input data port using a http POST request 
 
 ### Transformation
 Data pipelining sql will be uploaded via the input data port (using a http POST request) which will then fire transformation which will merge the data into a continents and countries dataset which will be saved in a relational database.
@@ -115,7 +125,7 @@ This metadata will also be stored in a relational database so that it can be eas
 
 ## How will the data consumer be able to consume the data product data?
 * For a web application developer, the technical demo will demonstrate how to send http POST & GET requests to the REST API endpoints to obtain back responses with data and metadata.
-* For a business user, the demo will demonstrate how a web application that they can access the [docs and metadata](dp-docs_and_metadata.md) about data products from a [data marketplace](data-marketplace.md) and securely access data by logging in from a web application and/or via Power BI.
+* For a business user, the demo will demonstrate that they can access the [docs and metadata](dp-docs_and_metadata.md) about data products from a [data marketplace](data-marketplace.md) and securely access target datasets by logging in from a web application and/or via Power BI.
 
 # What has been completed so far?
 

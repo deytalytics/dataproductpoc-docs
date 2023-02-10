@@ -14,7 +14,9 @@ The data product system architecture has to have the following architectural fea
 Each data product will maintain it's own documentation within a relational database. This will be available via the discovery port.
 
 ### Discoverable
-Data products will be discoverable via a [data marketplace](data-marketplace.md). Additionally, the metadata (information about the data product) will be programatically available via the discovery port allowing crawler apps to automatically discover data products.
+Data products will be discoverable via a [data marketplace](data-marketplace.md). Additionally, the metadata (information about the data product) will be made available via:-
+   * the discovery port which will speed up web application development 
+   * In a metadata database. This can be queried and metadata transferred into the enterprise data catalog. Either the metadata database or the enterprise data catalog can then provide the metadata to a data marketplace which users will use to search for data products.
 
 ### Addressable
 Data products will be provided with standardised addresses via a Gateway.

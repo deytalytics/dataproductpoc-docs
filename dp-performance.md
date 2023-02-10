@@ -34,17 +34,23 @@ As data products have standardised interfaces, it will be easy to construct high
 ## Reducing dataset size for BI reporting
 With reports, the report developer really has 2 options:-
 
-1. A direct query option. In this scenario, where the report is expected to directly query a data source, 
-the easiest solution is to simply allow the report developer to be able to securely connect to the dataset database as a datasource.  
+1. A direct query option. 
+This option covers when a report is expected to directly query a data source. 
+The easiest solution is to simply allow the report developer to be able to securely connect to the dataset database 
+as a datasource. Grant/revoke policies will be applied to users/roles to restrict their ability to fetch certain datasets. 
+Fine grained access control that can filter out certain fields or rows can also be implemented by using the permission information that
+has been defined in the dataset authorisation database (which will be maintained via the data product admin website)
 The report developer will be able to find the relevant metadata either by going to:-
-   * The data marketplace
+   * The [data marketplace](data-marketplace.md)
    * The enterprise data catalog
-   * Querying the metadata database
+   * Querying the metadata database directly.
 
-2. An import option. In this scenario a query that would have been generated in the reporting tool
-can be injected into the data product as pipeline SQL, essentially 
-creating a data product that has the query resultset as a dataset/payload. 
-This option works in scenarios where the resulting dataset/payload is relatively small. 
-The import option is also the recommended option for modern BI tools such as 
-Power BI as Power BI can apply more complex functions than are available in 
+2. An import option. 
+In this scenario a query that would have been generated in the reporting tool
+can have it's performance improved,  by injecting the query into the data product as pipeline SQL, essentially 
+creating a data product that has the query resultset as a target dataset. 
+This option works in scenarios where the resulting target dataset is relatively small. 
+
+The import option is the recommended option for modern BI tools such as 
+Power BI, as Power BI can apply more complex functions to imported datasets than are available in 
 straight SQL.

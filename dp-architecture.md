@@ -28,7 +28,7 @@ Data products can be trusted by ensuring that:-
 * It is well documented
 
 ## Secure
-As described in [authentication and authorisation](dp-authentication.md), data products can be secured using an organisation's authentication system and authorisation system by linking a data product gateway to those security systems.
+As described in [authentication and authorisation](dp-authentication.md), data products can be secured using an organisation's user authentication system coupled with data product and dataset authorisation systems.
 
 ## Inter-Operable
 By defining standardised interfaces, data products can be interoperable. 
@@ -56,13 +56,13 @@ The data product will have the following capabilities:-
 2. Can have data pushed (via connectors) by Applications into:-
    * Files
    * A Relational database table
-   * A Queue/Steam
+   * A Queue/Stream
 3. Can pull data into Files, a Relational Table or a Queue/Stream from:- 
    * SQL Endpoints
    * File Storage
    * Other APIs
    * Relational database sources
-4. Can import the data captured in the Input Data Layer into Relational Database Tables 
+4. Can import source dataset files captured in the Input Data Layer into Relational Database Tables 
 5. Will allow data pipeline sql to be securely injected and executed which will move data from the input connectors to the output data layer for consumption by the web application.
 6. Can provide the data to data consumers as either:-
    * Files

@@ -59,18 +59,20 @@ As a data product can provide more than 1 target dataset, it is also desirable t
 # Implementing Authentication & Authorisation within an Organisation
 ![Proposed authentication & authorisation architecture](dp-authentication.png)
 
-## Machine to machine authentication & authorisation
-When an application/system needs access to data products:-
-1. Token based authentication should be used 
-2. Access to the data products should be via a gateway
-3. The gateway can then check the token with an authentication system and check that the application/system is allowed access to the data product (minimal) or data product endpoint (preferred) via the data product authorisation system.
+# REST API authentication and authorisation
+For REST APIs, the approach should be the following:-
 
-## User authentication
-It is desirable that users are authenticated via an organisation's user authentication system e.g. Azure Active Directory and ideally using Single Sign-On technology e.g. PingID.
+1. The data product admin website should register users and record permissions against specific data products and data sets.
+2. An authentication system should be built that allows an ID token to be generated for a particular user. The 1st time that a user logins to their laptop, a call should be made to the authentication system to validate the user and store the ID token on their computer.
+3. Whenever a front end application needs to know who the user is then it should call the authentication system that will respond with the user's details and the ID token.
+4. The frontend application can then send the ID token rather than the userID to a REST API gateway or REST API making this secure.
+5. The REST API can then call the authentication system to get the userID
+6. The REST API can then query the dataset auth permissions in the persistant data store to see if the user is allowed to access a particular dataset.
 
-### Data product authorisation
-Users should be assigend to roles and roles should be authorised to access particular data products, and in the case of APIs, particular endpoints
+# Relational Database authentication & authorisation
+1. In this scenario, the necessary grants on tables to particular users/groups should be applied using the information in the dataset auth database against the tables in the dataset database. This logic can be run from the data product admin website.
+2. The reporting or sql query tool will typically already have been connected to the authentication system so it knows who the user is.
+3. When a reporting or sql query tool wishes to query a dataset in the dataset database then they need to passthrough the userid to the database which then needs to be able to run a query as though it was the passed through user.
 
-## Dataset Authorisation
-Dataset authorisation can be achieved by holding user, role, user-role and role-dataset permissions in a relational database. 
-These permissions can then execute the required grant/revoke permissions against the target datasets held in the dataset database. 
+# Queue authentication & authorisation
+Tbd

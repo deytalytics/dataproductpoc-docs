@@ -66,7 +66,7 @@ For REST APIs, the approach should be the following:-
 2. An authentication system should be built that allows an ID token to be generated for a particular user. The 1st time that a user logins to their laptop, a call should be made to the authentication system to validate the user and store the ID token on their computer.
 3. Whenever a front end application needs to know who the user is then it should call the authentication system that will respond with the user's details and the ID token.
 4. The frontend application can then send the ID token rather than the userID to a REST API gateway or REST API making this secure.
-5. The REST API can then call the authentication system (if desired) to get the userID
+5. The REST API then needs to call the authentication system to validate the ID token (and may choose to get the userID)
 6. The REST API can then query the dataset auth permissions in the persistant data store using either the userID and/or the ID token to see if the user is allowed to access a particular dataset.
 
 # Relational Database authentication & authorisation

@@ -57,22 +57,8 @@ to a particular set of users, and restrict access to the input data port and con
 As a data product can provide more than 1 target dataset, it is also desirable to provide more fine grained access control at the dataset level.
 
 # Implementing Authentication & Authorisation within an Organisation
+By using a data virtualisation layer, you can grant/revoke access to the data virtualisation views that cover datasets that are persisted in files, queues, relational databases, data lakes etc.
+This is described in more detail in the diagram below
+
 ![Proposed authentication & authorisation architecture](dp-authentication.png)
 
-# REST API authentication and authorisation
-For REST APIs, the approach should be the following:-
-
-1. The data product admin website should register users and record permissions against specific data products and data sets.
-2. An authentication system should be built that allows an ID token to be generated for a particular user. The 1st time that a user logins to their laptop, a call should be made to the authentication system to validate the user and store the ID token on their computer.
-3. Whenever a front end application needs to know who the user is then it should call the authentication system that will respond with the user's details and the ID token.
-4. The frontend application can then send the ID token rather than the userID to a REST API gateway or REST API making this secure.
-5. The REST API then needs to call the authentication system to validate the ID token (and may choose to get the userID)
-6. The REST API can then query the dataset auth permissions in the persistant data store using either the userID and/or the ID token to see if the user is allowed to access a particular dataset.
-
-# Relational Database authentication & authorisation
-1. In this scenario, the necessary grants on tables to particular users/groups should be applied using the information in the dataset auth database against the tables in the dataset database. This logic can be run from the data product admin website.
-2. The reporting or sql query tool will typically already have been connected to the authentication system so it knows who the user is.
-3. When a reporting or sql query tool wishes to query a dataset in the dataset database then they need to passthrough the userid to the database which then needs to be able to run a query as though it was the passed through user.
-
-# Queue authentication & authorisation
-Tbd

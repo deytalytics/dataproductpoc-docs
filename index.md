@@ -16,6 +16,9 @@ It will cover the following topics:-
    * [Data product & dataset creation architecture](data-product-and-dataset-creation.md)
    * [Dataset population architecure ](dataset-population.md)
    * [Dataset consumption architecture](dataset-consumption.md)
+* The [data product admin website](dp-admin-website.md)
+* The [data marketplace](data-marketplace.md)
+* [Data Virtualisation](data-virtualisation.md)
 * The creation of [data stores](dp-datastores.md) to store data captured from:-
    * Source to an Input Data Port/endpoint
    * Transformed into an abstraction layer
@@ -37,8 +40,6 @@ It will cover the following topics:-
 * Creation of data models in a [data modelling tool](data-modeling-tool.md)
 * How to create and where to store data lineage diagrams
 * Storage of metadata in a [data governance tool](data-governance-tool.md)
-* Creation of a [data product admin website](dp-admin-website.md)
-* Creation of a [data marketplace](data-marketplace.md)
 * [Infrastructure](dp-infrastructure.md)
 
 [james.m.dey](mailto://james.dey@hotmail.com) February 2023

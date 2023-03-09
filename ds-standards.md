@@ -21,7 +21,7 @@ It is therefore important that a history of data set changes are tracked so that
 
 Note: A data set only has to re-versioned whenever structural changes are made. Each load is not considered a new version.
 
-# Addressing 
+# Data Set Addressing 
 Data sets should be assigned addresses within the metadata with the following path format:-
 ```
 <organisation>/<business area>/<data product>/<data product version>/<data set>/<data set version>

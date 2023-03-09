@@ -26,6 +26,7 @@ You should resist the temptation to:-
 * Include groupings in the data product name e.g. in the examples above, you shouldn't create a data product called 
 ```<organisation>/uk/sales``` or ```<organisation>/sales/uk``` but should just call it uk or sales and provide the grouping as part of the metadata.
 
+
 ## Data Product Versioning
 The general principle is that if a data product is put into production, strong change control should be enforced to ensure that data products are only changed if strictly necessary.
 
@@ -34,3 +35,21 @@ Versioning should follow the concept of breaking and non-breaking changes, where
 Breaking changes should result in a major version number change i.e. 1.x to 2.x
 
 Non-breaking changes should result in a minor version number change e.g. 1.1 to 1.2
+
+# Data Product Addressing 
+Data products should be assigned addresses within the metadata with the following path format:-
+```
+<organisation>/<business area>/<data product>/<data product version>
+```
+So in our PoC example we have a single data product with just 1 version :-
+```
+acme/data_architecture/data_product_poc/0.1
+```
+
+```<Business area>``` can be hierarchical so you could have:-
+
+```
+acme/IT/data_architecture/data_product/0.1
+acme/Europe/UK/sales/data_product/0.1
+acme/North America/USA/sales/data_product/0.1
+```

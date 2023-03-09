@@ -1,56 +1,26 @@
 # What is special about data products?
 
-For Analytics / Business Intelligence, the following are the main methods of storing data that will allow business users to be able to create/view analyticals information:-
+Up until now it has been difficult for business people within organisations to feel engaged with 
+* improving the data quality
+* maintaining data dictionaries
 
-## An operational data store (ODS)
+which is critical to the success of an organisation. 
 
-![ODS](ods.png)
+Typically IT is tasked with creating analytical data stores (operational data stores, data lakes, data warehouses, data marts) which support reports & executive dashboards.
 
-This method effectively copies relational data at source with limited attempts to clean the data. 
-It achieves this typically by capturing data from source logs and applying it to the ODS.
-It's useful for running intraday reports or reacting to source data changes
-It's main disadvantages are that:-
-  1. The capture-apply replication method isn't very scalable so can only cope with relatively small data changes.
-  2. It can only handle relational data
+Problems occur throughout the process, as business people often simply provide a high level set of requirements or, if asked to be more engaged, have no real feel for how they can improve data without being able to see it.
 
-## An enterprise data warehouse (EDW)
+When the analytical data store is finally built, its not often well documented or might be in IT language so the business doesn't understand what the data set contains.
+Other problems occur in that it's typically difficult to know the provenance of the data set or how good the quality of the data is.
 
-![enterprise data warehouse](edw.png)
+In the past to sort out these issues, data governance programs have been initiated but data governance tools often don't allow the business to see the data that they're being asked to govern.
 
-This method was prevalent from 1990s through to 2000s. It involves:-
-* Capturing relational data from source into a staging area
-* Writing complex extract, transformation and load (ETL) scripts to push data into an enterprise data warehouse.
-
-The problems with this approach are:-
-1. Data warehouses are typically loaded as an overnight batch job so are not suitable for information that is updated intra-day
-2. IT are in total control of the data that gets loaded into the data warehouse. Where the data is sourced from and how it is transformed is buried in the complex scripts
-3. Knowing what data is available in the enterprise data warehouse is also often in the gift of IT
-4. To create an enterprise data warehouse typically takes years and any requests to add or update it typically takes months.
-
-## A data lake
-
-![data lake](data-lake.png)
-
-By the late 2000s, it became apparent that analytics would need to be able to cope with much larger volumes of data, process the data more rapidly and be able to deal with more than just relational data. Fortuitously, data storage costs came down significantly around the same time.
-
-Due to the identified ODS and EDW issues, organisations realised that they needed a better solution, so data lakes emerged. 
-A data lake involves:-
-* Operational systems writing data to the data lake as raw data files in a variety of formats
-* Data pipelining scripts can then run to merge data from different files and clean it so that its of good enough quality for use in analytics.
-
-A data lake avoids expensive updates of existing data, so can cope with much larger volumes of data and much more quickly than previously. For data scientists, they were also able to start writing scripts against the raw data captured in the data lake without waiting for IT to clean up the data. This gave a speed to market benefit.
-
-The downsides of a data lake include:-
-1. As the raw data is stored in a variety of formats, it originally required IT to be able to write code to extract analytics for business users. Later SQL interfaces partially circumvented this problem, however.
-2. Physically stored raw data is typically not understandable to anybody who doesn't work in IT and isn't familiar with the source systems.
-3. Curated data is still typically created by IT. Business areas might supply requirements but are reliant on IT to implement correctly.
-4. Business users cannot easily get access to data in the data lake nor discover what data is in there. 
-5. A monolithic data lake contains datasets from business areas throughout the organisation. So even if business users can access the monolithic data lake, its a case of not being able to see the wood for the trees. 
-6. Raw data in the data lake is of poor quality and hence cannot be trusted.
-7. Data security is often a problem with data lakes as it can be the case that a user who is given access to a data lake can see files that they should not be permitted to see.
+Finally, it's also typically difficult to know where data sets are and how to access them. 
 
 # Data Products
-So data products are stepping in to solve this problem. They will provide the following key benefits to an organisation:-
+So data products are stepping in to solve this problem. 
+
+They will provide the following key benefits to an organisation:-
 
 1. A [data marketplace](data-marketplace.md) - which will allow a user to search for data products by business function.
 
@@ -92,18 +62,12 @@ They could then work with their US colleagues on coming up with a common sales d
 
 ![Business aligned data products](business-aligned-data-products.png)
 
-7. More efficient - Enterprise data warehouses and data lakes end up as monoliths of data. This was similar to the situation that existed with application code up until 1990s. Application coders realised that the way to improve things was to split monolithic applications into microservices. Data products can follow the same path.
-For example, in the case of an enterprise data warehouse, you typically join all of your sales data from multiple sales systems and store in a enterprise sales fact table which can be diced and sliced by a number of dimensional tables e.g. country. 
-When you write a report, you might then filter on country. So your IT team has built a large sales table and your data consumers are then decomposing it when they query it.
-However, in the case of a data product, you could create:-
-   * A sales data product for each country
-   * And then an aggregated sales data product for each continent/market
-   * And finally a global sales data product. 
-The user can then decide which level of data product they want to use in a particular report. This is much more efficient. 
-8. Able to source and provide data in a variety of format - For example:-
+7. Able to source and provide data in a variety of format - For example:-
    * Most business users would most likely want to view data as CSV files so that they can use Excel
    * Web application developers typically want to deal with data in JSON file format.
    * Data scientists may want Parquet or ORC file formats due to their more efficient storage improving Big Data queries
-9. Interoperable - by providing standardised interfaces for data products, data products can be linked together like Lego bricks to provide more sophisticated solutions.
+
+8. Interoperable - by providing standardised interfaces for data products, data products can be linked together like Lego bricks to provide more sophisticated solutions.
+For example, the sales data product could deliver customer data sets. The customer dataset can then be used by the service department who create a service data product that provides customer_service dataset that links customers to their service records
 
 ![Lego Bricks](lego-bricks.jpg)

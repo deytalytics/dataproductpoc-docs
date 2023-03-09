@@ -12,7 +12,7 @@ It will cover the following topics:-
 * [What is special about data products](dp-business-benefits.md)
 * The [data mesh principles](data-mesh-principles.md) and what is a data product
 * [Data product types](dp-types.md)
-* [Data product architecture](dp-architecture.md)
+* [Data Mesh/Data product architecture](dp-architecture.md)
    * [Data product & dataset creation architecture](data-product-and-dataset-creation.md)
    * [Dataset population architecure ](dataset-population.md)
    * [Dataset consumption architecture](dataset-consumption.md)
@@ -33,7 +33,6 @@ It will cover the following topics:-
 * [Authentication & authorisation](dp-authentication.md)
 * How to [deploy to a cloud platform](cloud-platform-deployment.md)
 * [Data product naming and versioning standards](dp-standards.md)
-   * [REST API naming and versioning standards](REST-api-standards.md)
    * [Dataset naming and versioning standards](ds-standards.md)
 * [Improving Performance](dp-performance.md)
 * [Capturing metrics and auditing](dp-audit-and-metrics.md)

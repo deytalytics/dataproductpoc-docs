@@ -23,7 +23,8 @@ organisation->uk
 You should resist the temptation to:-
 * Group data products by IT systems as systems change over time and data products should align to the business rather than IT.
 * Make data products follow a particular naming convention for the underlying technology/approach e.g. APIs may have their own naming convention but not all data products are APIs so are unlikely to all be delivered via a http url.
-* Include groupings in the data product name e.g. in the examples above, you shouldn't create a data product called organisation-uk-sales or organisation-sales-uk but should just call it uk or sales and provide the grouping as part of the metadata.
+* Include groupings in the data product name e.g. in the examples above, you shouldn't create a data product called 
+<organisation>/uk/sales or organisation/sales/uk but should just call it uk or sales and provide the grouping as part of the metadata.
 
 ## Data Product Versioning
 The general principle is that if a data product is put into production, strong change control should be enforced to ensure that data products are only changed if strictly necessary.

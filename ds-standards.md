@@ -33,7 +33,8 @@ acme/data_architecture/data_product_poc/0.1/countries/0.1
 acme/data_architecture/data_product_poc/0.1/continents_and_countries/0.1
 acme/data_architecture/data_product_poc/0.1/continents_and_countries/0.2
 ```
-<Business area> can be hierarchical so you could have:-
+
+```<Business area>``` can be hierarchical so you could have:-
 
 ```
 acme/IT/data_architecture/data_product/0.1/countries/0.1

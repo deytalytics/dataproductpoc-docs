@@ -83,10 +83,13 @@ The data marketplace will need to:-
 ### Application requirements
 The data marketplace should:-
 * Be visually appealing i.e. engage the audience with using imagery and wording that is meaningful to them.
-* Provide intuitive navigation through the data marketplace e.g. If a data consumer is entitled to see all Trading and Supply data products then they should be able to drill down/up to Shell Energy data products and then to Shell Energy – SLMT etc.
+* Provide intuitive navigation through the data marketplace e.g. If a data consumer is entitled to see all of their division's data products 
+then they should be able to drill down to departmental data products.
 * Only present data products to a data consumer that are relevant and they are permitted to access
 * If it is anticipated that this would still result in a large number of data products and datasets for a data consumer to look at, then a search capability should be added so that they can look for specific data products. 
 
 # Off-the-shelf Data Marketplace
 If you're using Collibra as your data governance tool, it provides a [data marketplace](https://productresources.collibra.com/docs/collibra/latest/Content/DataMarketplace/to_dm.htm) which can utilise the data product & dataset metadata within Collibra.
-Bear in mind that you may not be able to tailor such a solution sufficiently for your data consumers, however. 
+Bear in mind that you may not be able to tailor such a solution sufficiently for your data consumers, however.
+
+

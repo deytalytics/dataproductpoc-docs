@@ -23,18 +23,23 @@ Note: A data set only has to re-versioned whenever structural changes are made. 
 
 # Addressing 
 Data sets should be assigned addresses within the metadata with the following path format:-
+```
 <organisation>/<business area>/<data product>/<data product version>/<data set>/<data set version>
-
+```
 So in our example we have:-
+```
 acme/data_architecture/data_product_poc/0.1/countries/0.1
 acme/data_architecture/data_product_poc/0.1/countries/0.1
 acme/data_architecture/data_product_poc/0.1/continents_and_countries/0.1
 acme/data_architecture/data_product_poc/0.1/continents_and_countries/0.2
-
+```
 <Business area> can be hierarchical so you could have:-
+
+```
 acme/IT/data_architecture/data_product/0.1/countries/0.1
 acme/Europe/UK/sales/data_product/0.1/customers/0.1
 acme/North America/USA/sales/data_product/0.1/customers/0.1
+```
 
 Although it may seem that the dataset addresses have unnecessarily long names, this covers the data mesh principle around addressability. 
 The long names also greatly assist in understanding which part of the organisation is responsible for maintaining the dataset

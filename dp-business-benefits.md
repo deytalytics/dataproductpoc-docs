@@ -22,11 +22,11 @@ So data products are stepping in to solve this problem.
 
 They will provide the following key benefits to an organisation:-
 
-1. A [data marketplace](data-marketplace.md) - which will allow a user to search for data products by business function.
+* A [data marketplace](data-marketplace.md) - which will allow a user to search for data products by business function.
 
 ![A data marketplace](data-marketplace.png)
 
-2. A data product admin website will allow business areas (and their data analysts) to securely configure:-
+* A data product admin website will allow business areas (and their data analysts) to securely configure:-
    * [Data product metadata](dp-docs_and_metadata.md)
    * Where to source data from e.g the data lake, a filestore, a relational database etc.
    * Technical data quality rules
@@ -34,7 +34,7 @@ They will provide the following key benefits to an organisation:-
 
    They will also be able to view data product metrics and audit logs.
 
-3. [Documentation](dp-docs_and_metadata.md) - each data product will contain (or provide links to) documentation which allows the user to fully understand:-
+* [Documentation](dp-docs_and_metadata.md) - each data product will contain (or provide links to) documentation which allows the user to fully understand:-
    * What the data product can provide
    * Where it came from
    * How good the data quality (DQ) is and the DQ rules have been implemented
@@ -43,17 +43,21 @@ They will provide the following key benefits to an organisation:-
    * How to get access to the data
    * Service Level Agreements
 
-4. Improved [security](dp-authentication.md) - access to data products will be via an organisation's preferred authentication & authorisation systems. This ensures that data sets (delivered by the data products) are only made available to authorised workers. 
+
+
+* Improved [security](dp-authentication.md) - access to data products will be via an organisation's preferred authentication & authorisation systems. This ensures that data sets (delivered by the data products) are only made available to authorised workers. 
 Additionally, audit logs will be kept within each data product to track who has been accessing which dataset and when.
 
 ![Authentication & Authorisation](dp-authentication.png)
 
-5. Better trusted - data product [documentation](dp-docs_and_metadata.md) will identify:-
+
+* Better trusted - data product [documentation](dp-docs_and_metadata.md) will identify:-
    * Where data has come from (via data lineage diagrams)
    * When it was updated
    * What [data quality rules](dp-data-quality.md) have been applied
+
    
-6. Better alignment with the business - As business users will be able to search for data products grouped by their functional area, 
+* Better alignment with the business - As business users will be able to search for data products grouped by their functional area, 
 they will be able to be able to read the documentation and examine the data product data for themselves. 
 This will help to easily identify problems with the data both within their business area and across business areas for data that needs to be reported on 
 at a higher level. 
@@ -62,12 +66,13 @@ They could then work with their US colleagues on coming up with a common sales d
 
 ![Business aligned data products](business-aligned-data-products.png)
 
-7. Able to source and provide data in a variety of format - For example:-
+* Able to source and provide data in a variety of format - For example:-
    * Most business users would most likely want to view data as CSV files so that they can use Excel
    * Web application developers typically want to deal with data in JSON file format.
    * Data scientists may want Parquet or ORC file formats due to their more efficient storage improving Big Data queries
 
-8. Interoperable - by providing standardised interfaces for data products, data products can be linked together like Lego bricks to provide more sophisticated solutions.
+
+* Interoperable - by providing standardised interfaces for data products, data products can be linked together like Lego bricks to provide more sophisticated solutions.
 For example, the sales data product could deliver customer data sets. The customer dataset can then be used by the service department who create a service data product that provides customer_service dataset that links customers to their service records
 
 ![Lego Bricks](lego-bricks.jpg)

@@ -19,7 +19,7 @@ Data products will be discoverable via a [data marketplace](data-marketplace.md)
    * In a metadata database. This can be queried and metadata transferred into the enterprise data catalog. Either the metadata database or the enterprise data catalog can then provide the metadata to a data marketplace which users will use to search for data products.
 
 ### Addressable
-Data products will be able to provide target datasets which have standardised addresses e.g
+Data products will be able to provide target datasets which will be assigned standard addresses in the data marketplace
 ```
 acme.com/global/0.1/sales/0.1
 acme.com/global/divisionA/0.1/sales/0.1

@@ -37,19 +37,19 @@ Breaking changes should result in a major version number change i.e. 1.x to 2.x
 Non-breaking changes should result in a minor version number change e.g. 1.1 to 1.2
 
 # Data Product Addressing 
-Data products should be assigned addresses within the metadata with the following path format:-
+Data products should be assigned uniform resource identifiers within the metadata with the following path format:-
 ```
-<organisation>/<business area>/<data product>/<data product version>
+http://data.<organisation url>/<business area>/<data product>/<data product version>
 ```
 So in our PoC example we have a single data product with just 1 version :-
 ```
-acme/data_architecture/data_product_poc/0.1
+http://data-acme/data_architecture/data_product_poc/0.1
 ```
 
 ```<Business area>``` can be hierarchical so you could have:-
 
 ```
-acme/IT/data_architecture/data_product/0.1
-acme/Europe/UK/sales/data_product/0.1
-acme/North America/USA/sales/data_product/0.1
+http://data.acme.com/IT/data_architecture/data_product/0.1
+http://data.acme/Europe/UK/sales/data_product/0.1
+http://data.acme/North America/USA/sales/data_product/0.1
 ```

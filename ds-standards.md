@@ -24,22 +24,22 @@ Note: A data set only has to re-versioned whenever structural changes are made. 
 # Data Set Addressing 
 Data sets should be assigned uniform resource identifiers (uris) within the metadata with the following path format:-
 ```
-http://data.<organisation url>/<business area>/<data product>/<data product version>/<data set>/<data set version>
+https://data.<organisation url>/<business area>/<data product>/<data product version>/<data set>/<data set version>
 ```
 So in our example we have:-
 ```
-http://data.acme.com/data_architecture/data_product_poc/0.1/countries/0.1
-http://data.acme.com/data_architecture/data_product_poc/0.1/countries/0.1
-http://data.acme.com/data_architecture/data_product_poc/0.1/continents_and_countries/0.1
-http://data.acme.com/data_architecture/data_product_poc/0.1/continents_and_countries/0.2
+https://data.acme.com/data_architecture/data_product_poc/0.1/countries/0.1
+https://data.acme.com/data_architecture/data_product_poc/0.1/countries/0.1
+https://data.acme.com/data_architecture/data_product_poc/0.1/continents_and_countries/0.1
+https://data.acme.com/data_architecture/data_product_poc/0.1/continents_and_countries/0.2
 ```
 
 ```<Business area>``` can be hierarchical so you could have:-
 
 ```
-http://data.acme.com/IT/data_architecture/data_product/0.1/countries/0.1
-http://data.acme.com/Europe/UK/sales/data_product/0.1/customers/0.1
-http://data.acme.com/North America/USA/sales/data_product/0.1/customers/0.1
+https://data.acme.com/IT/data_architecture/data_product/0.1/countries/0.1
+https://data.acme.com/Europe/UK/sales/data_product/0.1/customers/0.1
+https://data.acme.com/North America/USA/sales/data_product/0.1/customers/0.1
 ```
 
 Although it may seem that the dataset uris have unnecessarily long names, this covers the data mesh principle around addressability. 

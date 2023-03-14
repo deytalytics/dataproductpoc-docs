@@ -23,6 +23,7 @@ It will cover the following topics:-
    * Source to an Input Data Port/endpoint
    * Transformed into an abstraction layer
    * Formatted and sent via an Output Data Port/endpoint
+* [The Enterprise Data Catalogue](enterprise-data-catalogue.md)
 * [Required documentation & metadata](dp-docs_and_metadata.md)
 * The creation of the [discovery endpoint](dp-discovery-endpoint.md) which will allow information about the REST API to be discovered 
    i.e. human & machine readable documentation & data dictionary

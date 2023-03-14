@@ -16,4 +16,5 @@ The data product admin website as a minimum viable product (MVP) should provide 
    * Create, View and update data source configuration information for the data product
    * Trigger pulling data in from a specific data source to the input data layer
    * Create, View and update pipeline SQL which will move data from the input data layer to the output data layer
+   * Create, View and update a data dictionary (schema.csv) for all of the target datasets 
    

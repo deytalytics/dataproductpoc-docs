@@ -39,7 +39,6 @@ It will cover the following topics:-
 * [Capturing metrics and auditing](dp-audit-and-metrics.md)
 * Creation of data models in a [data modelling tool](data-modeling-tool.md)
 * How to create and where to store data lineage diagrams
-* Storage of metadata in a [data governance tool](data-governance-tool.md)
 * [Infrastructure](dp-infrastructure.md)
 
 [james.m.dey](mailto://james.dey@hotmail.com) February 2023

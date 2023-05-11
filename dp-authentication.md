@@ -43,6 +43,17 @@ e.g.
    * the authentication system responding with an access token to a callback url on the server application
    * the server application can subsequently use the access token (which periodically typically needs to be refreshed) to authenticate as the user
 
+# Implementing Authentication within an Organisation
+For the PoC we have chosen to use basic authentication for demo purposes. 
+
+Within an organisation, we typically use Token based authentication. This will involve:-
+1. Registering the Data Marketplace and Data Product Admin Website with the Authentication engine that you use. 
+Note: The Authentication engine should sit in front of these Apps and be able to pass a user ID token in the http header
+2. Adding code to our Apps to decode the provided user ID token using your Identity Provider 
+
+The diagram shows how this set up works in practice:-
+![Authentication vs Authorisation](dp-authentication.png)
+
 ## Authorisation
 Authorisation means ensuring that an authenticated user is permitted to access the requested data.
 Authorisation is a loaded term. So needs to be split down further for clarity.
@@ -55,10 +66,4 @@ to a particular set of users, and restrict access to the input data port and con
 
 ### Dataset authorisation
 As a data product can provide more than 1 target dataset, it is also desirable to provide more fine grained access control at the dataset level.
-
-# Implementing Authentication & Authorisation within an Organisation
-By using a data virtualisation layer, you can grant/revoke access to the data virtualisation views that cover datasets that are persisted in files, queues, relational databases, data lakes etc.
-This is described in more detail in the diagram below
-
-![Proposed authentication & authorisation architecture](dp-authentication.png)
 

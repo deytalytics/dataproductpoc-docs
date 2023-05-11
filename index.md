@@ -18,7 +18,6 @@ It will cover the following topics:-
    * [Dataset consumption architecture](dataset-consumption.md)
 * The [data product admin website](dp-admin-website.md)
 * The [data marketplace](data-marketplace.md)
-* [Data Virtualisation](data-virtualisation.md)
 * The creation of [data stores](dp-datastores.md) to store data captured from:-
    * Source to an Input Data Port/endpoint
    * Transformed into an abstraction layer

@@ -71,15 +71,13 @@ The data product will have the following capabilities:-
    * Other APIs
    * Relational database sources
 4. Can import source dataset files captured in the Input Data Layer into Relational Database Tables 
-5. Will allow data pipeline sql to be securely injected and executed which will move data from the input connectors to the output data layer for consumption by the web application.
-6. Can provide the data to data consumers as either:-
+5. Can provide the data to data consumers as either:-
    * Files
    * Queues
-   * Relational Tables
-7. Will be performance managed via [Data Virtualisation](data-virtualisation.md)
-8. Will record it's metadata in a relational database that can feed an [enterprise data catalogue](enterprise-data-catalogue.md).
-9. Can be administered and configured via a [Data Product Admin website](dp-admin-website.md)
-10. Will have it's metadata:-
+   * Relational Tables 
+6. Will record it's metadata in a relational database that can feed an [enterprise data catalogue](enterprise-data-catalogue.md). 
+7. Can be administered and configured via a [Data Product Admin website](dp-admin-website.md)
+8. Will have it's metadata:-
    * Published on a [data marketplace](data-marketplace.md) (useful for business users)
    * Made available from a discovery port/endpoint (useful for developers)
    * Made available by querying the metadata database directly (useful for data analysts)
